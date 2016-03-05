@@ -3,6 +3,9 @@ layout: page
 title: Hello World!
 tagline: Supporting tagline
 ---
+
+GitHub Pages 搭建好了，哈哈！
+
 {% include JB/setup %}
 
 Read [Jekyll Quick Start](http://jekyllbootstrap.com/usage/jekyll-quick-start.html)
