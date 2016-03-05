@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "hello github pages!"
+title:  "Hello GitHub Pages!"
 date:   2016-03-05 
 categories: GitHub
 ---
