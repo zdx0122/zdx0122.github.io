@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "hello jekyll!"
-date:   2015-03-05 17:34:54
+title:  "Hello GitHub Pages!"
+date:   2016-03-05 17:34:54
 categories: 
 ---
 
