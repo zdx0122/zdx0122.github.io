@@ -5,8 +5,7 @@ date:   2016-03-05 17:34:54
 categories: 
 ---
 
-* content
-{:toc}
+
 
 ### Hello GitHub Pages! ###
 哈哈，终于给建设好了。
