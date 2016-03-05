@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Hello GitHub Pages!"
+title:  "hello github pages!"
 date:   2016-03-05 17:34:54
 categories: 
 ---
