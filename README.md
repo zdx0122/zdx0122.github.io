@@ -1,2 +1,2 @@
-# zdx0122.github.com
+# zdx0122.github.io
 GitHub Pages
