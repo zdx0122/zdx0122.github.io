@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "hello github pages!"
-date:  2016/3/5 17:58:34 
+date:  2016-03-05 15:14:54
 categories: GitHub
 ---
 
