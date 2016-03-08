@@ -61,49 +61,57 @@ Monkey 测试2：`adb shell monkey -p com.htc.Weather –s 10 100`
 
 示例：`adb shell monkey -p com.htc.Weather –throttle 3000 100`
 
-	--pct-touch<percent>
+
+    --pct-touch<percent>
 
 调整触摸事件的百分比(触摸事件是一个 down-up 事件，它发生在屏幕上的某单一位置)。
 
 示例：`adb shell monkey -p com.htc.Weather --pct-touch 10 1000`
 
-	--pct-motion<percent>
+
+    --pct-motion<percent>
 
 调整动作事件的百分比(动作事件由屏幕上某处的一个 down 事件、一系列的伪随机事件和一个 up 事件组成)。
 
 示例：`adb shell monkey -p com.htc.Weather --pct-motion 20 1000`
 
-	--pct-trackball<percent>
+
+    --pct-trackball<percent>
 
 调整轨迹事件的百分比(轨迹事件由一个或几个随机的移动组成，有时还伴随有点击)。
 
 示例：`adb shell monkey -p com.htc.Weather --pct-trackball 30 1000`
 
-	--pct-nav<percent>
+
+    --pct-nav<percent>
 
 调整“基本”导航事件的百分比(导航事件由来自方向输入设备的 up/down/left/right 组成)。
 
 示例：`adb shell monkey -p com.htc.Weather --pct-nav 40 1000`
 
-	--pct-majornav<percent>
+
+    --pct-majornav<percent>
 
 调整“主要”导航事件的百分比(这些导航事件通常引发图形界面中的动作，如：5-way键盘的中间按键、回退按键、菜单按键)
 
 示例：`adb shell monkey -p com.htc.Weather --pct-majornav 50 1000`
 
-	--pct-syskeys<percent>
+
+    --pct-syskeys<percent>
 
 调整“系统”按键事件的百分比(这些按键通常被保留，由系统使用，如 Home、Back、Start Call、End Call 及音量控制键)。
 
 示例：`adb shell monkey -p com.htc.Weather --pct-syskeys 60 1000`
 
-	--pct-appswitch<percent>
+
+    --pct-appswitch<percent>
 
 调整启动 Activity 的百分比。在随机间隔里，Monkey 将执行一个 startActivity() 调用，作为最大程度覆盖包中全部Activity 的一种方法。
 
 示例：`adb shell monkey -p com.htc.Weather --pct-appswitch 70 1000`
 
-	--pct-anyevent<percent>
+
+    --pct-anyevent<percent>
 
 调整其它类型事件的百分比。它包罗了所有其它类型的事件，如：按键、其它不常用的设备按钮、等等。
 
