@@ -119,7 +119,7 @@ Monkey 测试2：`adb shell monkey -p com.htc.Weather –s 10 100`
 
 指定多个类型事件的百分比：
 
-    adb shell monkey -pcom.htc.Weather --pct-anyevent 50 --pct-appswitch 50 1000
+`adb shell monkey -pcom.htc.Weather --pct-anyevent 50 --pct-appswitch 50 1000`
 
 注意：各事件类型的百分比总数不能超过100%；
 
