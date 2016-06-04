@@ -107,8 +107,10 @@ eclipse中，选择`Help->Install New Software`，输入`http://beust.com/eclips
 
 ## 注解执行顺序 ##
 
+- 执行 @BeforeSuite
+- 执行 @BeforeTest
 - 执行 @BeforeClass
-- 执行 @BeforeClass
+- 执行 @DataProvider
 - 执行 @BeforeMethod
 - 执行 f()
 - 执行 @AfterMethod
@@ -117,6 +119,7 @@ eclipse中，选择`Help->Install New Software`，输入`http://beust.com/eclips
 - 执行 @AfterMethod
 - 执行 @AfterClass
 - 执行 @AfterTest
+- 执行 @AfterSuite
 
 f()和f1()为两条Case。
 
