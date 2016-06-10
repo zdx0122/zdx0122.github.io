@@ -76,5 +76,13 @@ MonkeyRunner API包（com.android.monkeyrunner） 包含三个模块：
 
 ## 运行MonkeyRunner ##
 
+你可以从一个程序文件中运行MonkeyRunner，也可以在命令行中交互运行MonkeyRunner。
 
+MonkeyRunner命令语法：
+
+	monkeyrunner-plugin<plugin_jar><program_filename><program_options>
+
+- -plugin<plugin_jar>: 可选，指定一个MonkeyRunner插件文件。
+- <program_filename>: 如果你提供这个参数，这monkeyrunner命令将该文件的内容作为一个Python程序。如果没有提供参数，该命令将启动一个交互式会话。
+- <program_options>: 可选，<program_filename>的参数信息。
 
