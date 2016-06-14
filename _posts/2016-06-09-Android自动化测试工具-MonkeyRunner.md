@@ -74,6 +74,8 @@ MonkeyRunner API包（com.android.monkeyrunner） 包含三个模块：
 
     from com.android.monkeyrunner import MonkeyRunner,MonkeyDevice,MonkeyImage
 
+https://developer.android.com/studio/test/monkeyrunner/index.html#APIClasses
+
 ## 运行MonkeyRunner ##
 
 你可以从一个程序文件中运行MonkeyRunner，也可以在命令行中交互运行MonkeyRunner。
