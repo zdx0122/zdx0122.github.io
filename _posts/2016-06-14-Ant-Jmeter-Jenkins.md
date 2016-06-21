@@ -77,6 +77,7 @@ ant执行主要是靠build.xml文件，xml中设置Jmeter安装目录、生成�
 	</project>
 
 本地执行Ant，返回内容BUILDE SUCCESSFUL.
+
 ![本地执行Ant返回结果](http://7fvd6e.com1.z0.glb.clouddn.com/%E6%9C%AC%E5%9C%B0Ant.jpg)
 
 ## 配置Jenkins ##
