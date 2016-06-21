@@ -87,12 +87,15 @@ ant执行主要是靠build.xml文件，xml中设置Jmeter安装目录、生成�
 新建一个自由风格的Job,比如命名为Ant-Jmeter-Test。
 
 **源码管理**，我是把.jmx文件的用例、build.xml、生成jtl格式报告目录、生成html格式报告放在了svn中，由Jenkins进行拉取。源码管理，第一次放svn链接会要求输入svn帐号和密码。
+
 ![](http://7fvd6e.com1.z0.glb.clouddn.com/Jenkins%E6%BA%90%E7%A0%81%E7%AE%A1%E7%90%86.jpg)
 
 **构建触发器**，此处我暂时用手动点击“立即构建”。
+
 ![](http://7fvd6e.com1.z0.glb.clouddn.com/Jenkins%E6%9E%84%E5%BB%BA%E8%A7%A6%E5%8F%91%E5%99%A8.jpg)
 
 **构建**，使用Ant构建，Build File直接填写当前项目目录中的build.xml，Target处可以不填写，如果填写，一定要写build.xml中的target name，本文中为"all"。
+
 ![](http://7fvd6e.com1.z0.glb.clouddn.com/Jenkins%E6%9E%84%E5%BB%BA.jpg)
 
 **构建后操作**：
@@ -113,6 +116,7 @@ ant执行主要是靠build.xml文件，xml中设置Jmeter安装目录、生成�
 问题：
 
 Ant+Jmeter生成的html报告，Min Time 和 Max Time 出现 NaN，如图：
+
 ![](http://7fvd6e.com1.z0.glb.clouddn.com/Min&MaxTime-NaN.jpg)
 
 解决方法：
