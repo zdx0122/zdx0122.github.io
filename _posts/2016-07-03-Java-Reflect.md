@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Java反射"
-date:   2016-07-03 02
+title:  "项目管理利器--Maven"
+date:   2016-07-06 01
 categories: Java
 ---
 
@@ -9,294 +9,266 @@ categories: Java
 
 
 
-## Class类的使用 ##
 
-1.在面向对象的世界里， 万事万物皆对象。
+## 唯快不破-maven快速入门 ##
 
-Java语言中， 静态的成员、普通数据对象类是不是对象呢？类是谁的对象呢？
+### maven介绍及环境搭建 ###
 
-类是对象，类是java.lang.Class类的实例对象。
+Maven是基于项目对象模型(POM), 可以通过一小段描述信息来管理项目的构建、报告和文档的软件项目管理工具。
 
-2.这个对象如何表示？
+可以帮助我们构建项目，也是一款强大的自动化构建工具，包括编译、复制、打包、运行的过程。
 
-    //Foo的实例对象如何表示？
-    Foo foo1 = new Foo();
-    //Foo这个类也是一个实例对象
-    //任何一个类都是Class的实例对象，这个实例对象有三种表示方法
-    
-    //第一种表示方式 ---> 实际在告诉我们任何一个类都有一个隐含的静态成员变量class
-    Class c1 = Foo.class;
-    
-    //第二种表达方式： 已经知道该类的对象，通过getClass方法
-    Class c2 = foo1.getClass();
+提供了一个仓库的概念，统一的管理第三方的jar包。
 
-	//官网： c1, c2 表示了Foo类的类类型(class type)
+官网地址：https://maven.apache.org/
 
-	//万事万物皆对象，类也是对象，是Class类的实例对象，这个对象我们称为该类的类类型。
+下载地址：https://maven.apache.org/download.cgi
 
-	//不管c1 or c2 都代表了Foo类的类类型，一个类只可能是Class类的一个实例对象
-	System.out.println(c1 == c2);//结果是true。
+目录介绍：
 
-	//第三种表达方式： 
-	Class c3 = null;
-	try {
-		c3 = Class.forName("com.imooc.reflect.Foo")
-	} catch (ClassNotFoundException e) {
-		e.printStackTrace();
-	}
-	System.out.println(c2 == c3);//结果是true。
+	- apache-maven-3.3.9
+		- bin: 包含mvn的运行脚本，其中m2.conf是配置文件
+		- boot: 包含一个类加载器的框架，maven使用此加载类库
+		- conf: 配置文件目录，常用到setting.xml
+		- lib: 包含maven和使用的第三方类库
 
-	//我们完全可以通过类的类类型创建该类的对象实例 ---> 通过c1 or c2 or c3 创建Foo的实例对象
-	Foo foo = (Foo)c1.newInstance();//需要有无参数的构造方法
+配置环境变量：
+
+1. 新建一个系统变量`M2_HOME`, 指向maven安装目录`C:\Java\apache-maven-3.3.9`
+
+2. 修改Path，在最后的位置输入`;%M2_HOME%\bin`
+
+3. 验证是否配置成功，打开cmd命令框，输入`mvn -v`, 显示出了Maven版本即是成功。如下：
+
+	C:\Users\Administrator>mvn -v
+	Apache Maven 3.3.9 (bb52d8502b132ec0a5a3f4c09453c07478323dc5; 2015-11-11T00:41:4
+	7+08:00)
+	Maven home: C:\Java\apache-maven-3.3.9
+	Java version: 1.8.0_51, vendor: Oracle Corporation
+	Java home: C:\Program Files\Java\jdk1.8.0_51\jre
+	Default locale: zh_CN, platform encoding: GBK
+	OS name: "windows 7", version: "6.1", arch: "amd64", family: "dos"
+
+## 第一个Maven案例 Hello Maven ##
+
+新建一个Maven项目，目录结构如下：
+
+	- src
+		- main
+			- java
+				- package
+		- test
+			- java
+				- package
+
+流程： 新建项目 -> 编写程序文件和测试文件 -> 编写`pom.xml`文件 -> 根目录下运行 `mvn compile` 编译程序 -> 运行 `mav test` 测试程序 -> 运行 `mvn package` 打包程序
 
 
-## 动态加载类 ##
+## 稳打稳扎-Maven基础知识 ##
 
-3.Class.forName("类的全称")
+### 常用的构建命令介绍 ###
 
-- 不仅表示了类的类类型，还代表了动态加载类
-- 请大家区分编译、运行
-- 编译时刻加载类是静态加载类、运行时刻加载类是动态加载
+	mvn -v : 查看Maven版本
+	mvn compile : 编译
+	mvn test : 测试
+	mvn package : 打包，在项目根目录中会产出一个target目录
+	mvn clean : 删除target
+	mvn install : 安装jar包到本地仓库中
 
-使用 `new` 创建对象是静态加载类，在编译时刻就需要加载所有的可能使用到的类。
+### 自动创建目录骨架 ###
 
-`Class c = Class.forName(args[0]);`则是动态加载类，在运行时刻加载
+archetype插件：用于创建符合Maven规定的目录骨架
+
+Maven规定目录结构：
+
+	- src
+		- main
+			- java
+				- 主代码
+
+		- test
+			- 测试代码
+
+进入项目根目录，执行 `mvn archetype:generate` 
+
+创建目录的两种方式：
+
+1. archetype:generate 按照提示进行选择
+2. archetype:generate -DgroupId=z组织名, 公司网址的反写+项目名 -DartifactId=项目名-模块名 -Dversion=版本号 -Dpackage=代码所存在的包名
 
 
-## 获取方法信息 ##
+### Maven中的坐标和仓库 ###
 
-	package ren.itest;
+任何一个依赖或者插件都可被**构件**；
+
+构件通过**坐标**作为其唯一标识。
+
+坐标在pom.xml中的代码：
+
+	<dependency>
+		<groupId>ren.itest.maven01</groupId>
+		<artifactId>maven01-model</artifactId>
+		<version>0.0.1SNAPSHOT</version>
+	</dependency>
+
+仓库用来管理项目中的依赖；仓库分为本地仓库和远程仓库。
+
+镜像仓库：许多依赖包在国内下载不下来时，可以使用镜像仓库。
+
+在conf\settings.xml中的<mirrors>标签中修改镜像仓库。
+
+### 在Eclipse安装Maven插件以及创建Maven项目 ###
+
+Pass
+
+### Maven的生命周期和插件 ###
+
+完整的项目构建过程包括：
+
+清理、编译、测试、打包、集成测试、验证、部署
+
+Maven生命周期：
+
+- clean 清理项目
+	- pre-clean 执行清理前的工作
+	- clean 清理上一次构建生成的所有文件
+	- post-clean 执行清理后的文件
+- default 构建项目(最核心)
+	- compile test package install
+- site 生成项目站点
+	- pre-site 在生成项目站点前要完成的工作
+	- site 生成项目的站点文档
+	- post-site 在生成项目站点后要完成的工作
+	- site-deploy 发布生成的站点到服务器上
+
+
+### pom.xml常用元素介绍 ###
+
+	<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+		<!--指定了当前的pom版本-->
+		<modelVersion>4.0.0</modelVersion>
 	
-	import org.omg.Messaging.SyncScopeHelper;
-	
-	public class GetClass {
-		public static void main(String args[]) {
-			Class c1 = int.class;
-			Class c2 = String.class;
-			Class c3 = double.class;
-			Class c4 = Double.class;
-			Class c5 = void.class;
-			
-			System.out.println(c1.getName());
-			System.out.println(c2.getName());
-			System.out.println(c3.getName());
-			System.out.println(c4.getName());
-			System.out.println(c5.getName());
-		}
-	}
+		<groupId>反写的公司网址+项目名</groupId>
+		<artifactId>项目名+模块名</artifactId>
 
-输出：
+		<!--第一个0 表示大版本号
+			第二个0 表示分支版本号
+			第三个0 表示小版本号
+			0.0.1
+			snapshot快照
+			alpha内部测试
+			beta公测
+			Release稳定
+			GA正式发布
+		-->
+		<version></version>
 
-	int
-	java.lang.String
-	double
-	java.lang.Double
-	void
+		<!--默认是jar
+			war zip pom
+		-->
+		<packaging></packaging>
+		<!--项目描述名-->
+		<name></name>
+		<!--项目地址-->
+		<url></url>
+		<!--项目描述-->
+		<description></description>
+		<developers></developers>
+		<licenses></licenses>
+		<organization></organization>
 
-4.基本的数据类型
+		<dependencies>
+			<dependency>
+				<groupId></groupId>
+				<artifactId></artifactId>
+				<version></version>
+				<type></type>
+				<scope>test</scope>
+				<!--设置依赖是否可选-->
+				<optional></optional>
+				<!--排除依赖传递列表-->
+				<exclusions>
+					<exclusion></exclusion>
+				</exclusions>
+			</dependency>
+		</dependencies>
 
-void关键字 都存在类类型
+		<!--依赖的管理-->
+		<dependencyManagement>
+			<dependencies>
+				<dependency></dependency>
+			</dependencies>
+		</dependencyManagement>
+		
+		<build>
+			<!--插件列表>
+			<plugin>
+				<groupId></groupId>
+				<artifactId><artifactId>
+				<version></version>
+			</plugin>
+		</build>
 
-5.Class类的基本API操作
+		<parent></parent>
+		<modules>
+			<module></module>
+		</modules>
 
-获取类的所有方法、成员变量、构造函数的信息：
+	</project>
 
-	package com.imooc.reflect;
-	
-	import java.lang.reflect.Constructor;
-	import java.lang.reflect.Field;
-	import java.lang.reflect.Method;
-	
-	public class ClassUtil {
-		/**
-		 * 打印类的信息，包括类的成员函数、成员变量(只获取成员函数)
-		 * @param obj 该对象所属类的信息
-		 */
-		public static void printClassMethodMessage(Object obj){
-			//要获取类的信息  首先要获取类的类类型
-			Class c = obj.getClass();//传递的是哪个子类的对象  c就是该子类的类类型
-			//获取类的名称
-			System.out.println("类的名称是:"+c.getName());
-			/*
-			 * Method类，方法对象
-			 * 一个成员方法就是一个Method对象
-			 * getMethods()方法获取的是所有的public的函数，包括父类继承而来的
-			 * getDeclaredMethods()获取的是所有该类自己声明的方法，不问访问权限
-			 */
-			Method[] ms = c.getMethods();//c.getDeclaredMethods()
-			for(int i = 0; i < ms.length;i++){
-				//得到方法的返回值类型的类类型
-				Class returnType = ms[i].getReturnType();
-				System.out.print(returnType.getName()+" ");
-				//得到方法的名称
-				System.out.print(ms[i].getName()+"(");
-				//获取参数类型--->得到的是参数列表的类型的类类型
-				Class[] paramTypes = ms[i].getParameterTypes();
-				for (Class class1 : paramTypes) {
-					System.out.print(class1.getName()+",");
-				}
-				System.out.println(")");
-			}
-		}
-	    /**
-	     * 获取成员变量的信息
-	     * @param obj
-	     */
-		public static void printFieldMessage(Object obj) {
-			Class c = obj.getClass();
-			/*
-			 * 成员变量也是对象
-			 * java.lang.reflect.Field
-			 * Field类封装了关于成员变量的操作
-			 * getFields()方法获取的是所有的public的成员变量的信息
-			 * getDeclaredFields获取的是该类自己声明的成员变量的信息
-			 */
-			//Field[] fs = c.getFields();
-			Field[] fs = c.getDeclaredFields();
-			for (Field field : fs) {
-				//得到成员变量的类型的类类型
-				Class fieldType = field.getType();
-				String typeName = fieldType.getName();
-				//得到成员变量的名称
-				String fieldName = field.getName();
-				System.out.println(typeName+" "+fieldName);
-			}
-		}
-		/**
-		 * 打印对象的构造函数的信息
-		 * @param obj
-		 */
-		public static void printConMessage(Object obj){
-			Class c = obj.getClass();
-			/*
-			 * 构造函数也是对象
-			 * java.lang. Constructor中封装了构造函数的信息
-			 * getConstructors获取所有的public的构造函数
-			 * getDeclaredConstructors得到所有的构造函数
-			 */
-			//Constructor[] cs = c.getConstructors();
-			Constructor[] cs = c.getDeclaredConstructors();
-			for (Constructor constructor : cs) {
-				System.out.print(constructor.getName()+"(");
-				//获取构造函数的参数列表--->得到的是参数列表的类类型
-				Class[] paramTypes = constructor.getParameterTypes();
-				for (Class class1 : paramTypes) {
-					System.out.print(class1.getName()+",");
-				}
-				System.out.println(")");
-			}
-		}
-	}
+		
+### 依赖范围 ###
+
+	<scope>test</scope>
+
+- compile : 默认的范围，编译测试运行都有效。
+- provided : 在编译和测试时有效。
+- runtime : 在测试和运行时有效。
+- test : 只在测试时有效。
+- system : 与本机系统相关联， 可移植性差。
+- import : 导入的范围，它只使用在dependencyManagement中，标识从其它的pom中导入dependency的配置。
+
+### 依赖传递 ###
+
+依赖的pom.xml中加入被依赖的坐标，然后编译，即是依赖的操作步骤；遇到错误的话，要先对被依赖者进行打包，然后再对依赖者清理和编译。
+
+	<dependency>
+		<groupId>ren.itest.maven01</groupId>
+		<artifactId>maven01-model</artifactId>
+		<version>0.0.1SNAPSHOT</version>
+	</dependency>
+
+依赖传递类似于面向对象中的继承，例如：Maven项目C依赖项目B， 项目B依赖项目A，则C也依赖A。
+
+如果C不想依赖A，只是依赖B的话，可以在C的pom.xml中加入`<exclusion>A的坐标</exclusion>`
 
 
-## 方法反射的基本操作 ##
+### 依赖冲突 ###
 
-### 方法的反射 ###
+1.短路优先
 
-1.如何获取某个方法
+A -> B -> C -> X(jar)
 
-方法的名称和方法的参数列表才能唯一决定某个方法
+A -> D ->X(jar) 优先依赖
 
-2.方法反射的操作
+2.先声明先优先
 
-method.invoke(对象， 参数列表)
-
-代码：
-
-	package com.imooc.reflect;
-	
-	import java.lang.reflect.Method;
-	
-	public class MethodDemo1 {
-		public static void main(String[] args) {
-		   //要获取print(int ,int )方法  1.要获取一个方法就是获取类的信息，获取类的信息首先要获取类的类类型
-			A a1 = new A();
-			Class c = a1.getClass();
-			/*
-			 * 2.获取方法 名称和参数列表来决定  
-			 * getMethod获取的是public的方法
-			 * getDelcaredMethod自己声明的方法
-			 */
-		    try {
-				//Method m =  c.getMethod("print", new Class[]{int.class,int.class});
-		    	Method m = c.getMethod("print", int.class,int.class);
-		    	
-		    	//方法的反射操作  
-		    	//a1.print(10, 20);方法的反射操作是用m对象来进行方法调用 和a1.print调用的效果完全相同
-		        //方法如果没有返回值返回null,有返回值返回具体的返回值
-		    	//Object o = m.invoke(a1,new Object[]{10,20});
-		    	Object o = m.invoke(a1, 10,20);
-		    	System.out.println("==================");
-		    	//获取方法print(String,String)
-	             Method m1 = c.getMethod("print",String.class,String.class);
-	             //用方法进行反射操作
-	             //a1.print("hello", "WORLD");
-	             o = m1.invoke(a1, "hello","WORLD");
-	             System.out.println("===================");
-	           //  Method m2 = c.getMethod("print", new Class[]{});
-	                Method m2 = c.getMethod("print");
-	               // m2.invoke(a1, new Object[]{});
-	                m2.invoke(a1);
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} 
-	     
-		}
-	}
-	class A{
-		public void print(){
-			System.out.println("helloworld");
-		}
-		public void print(int a,int b){
-			System.out.println(a+b);
-		}
-		public void print(String a,String b){
-			System.out.println(a.toUpperCase()+","+b.toLowerCase());
-		}
-	}
+如果路径长度相同，则谁先声明，先解析谁
 
 
-## 通过反射了解集合泛型的本质 ##
+### 聚合和继承 ###
 
-通过Class, Method来认识泛型的本质
+在一个新Maven项目的pom.xml中，加入以下标签即是实现聚合：
 
+	<modules>
+		<module>../A</module>
+		<module>../B</module>
+		<module>../C</module>
+	</modules>
 
-	package com.imooc.reflect;
-	
-	import java.lang.reflect.Method;
-	import java.util.ArrayList;
-	
-	public class MethodDemo4 {
-		public static void main(String[] args) {
-			ArrayList list = new ArrayList();
-			
-			ArrayList<String> list1 = new ArrayList<String>();
-			list1.add("hello");
-			//list1.add(20);错误的
-			Class c1 = list.getClass();
-			Class c2 = list1.getClass();
-			System.out.println(c1 == c2);
-			//反射的操作都是编译之后的操作
-			
-			/*
-			 * c1==c2结果返回true说明编译之后集合的泛型是去泛型化的
-			 * Java中集合的泛型，是防止错误输入的，只在编译阶段有效，
-			 * 绕过编译就无效了
-			 * 验证：我们可以通过方法的反射来操作，绕过编译
-			 */
-			try {
-				Method m = c2.getMethod("add", Object.class);
-				m.invoke(list1, 20);//绕过编译操作就绕过了泛型
-				System.out.println(list1.size());
-				System.out.println(list1);
-				/*for (String string : list1) {
-					System.out.println(string);
-				}*///现在不能这样遍历
-			} catch (Exception e) {
-			  e.printStackTrace();
-			}
-		}
-	
-	}
+执行clean 和 install。
 
+在父Maven项目中，定义要被继承引用的变量，在子Maven项目中，使用`<parent>parent的坐标</parent>`，即是继承。
+
+End
