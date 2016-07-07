@@ -11,7 +11,7 @@ icon: glyphicon-heart
 
 这个博客使用Jekyll技术，搭建在GitHub Pages上，采用极简风格的主题(作者HyG)，使用MarkDown编写笔记和文章。
 
-
+崇尚Hack和Geek精神，爱折腾的一个人。
 
 邮箱：zdx0122@gmail.com
 
