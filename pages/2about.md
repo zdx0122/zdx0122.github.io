@@ -17,5 +17,5 @@ icon: glyphicon-heart
 
 微信：zdx0122
 
-![i.itest.ren](http://7fvd6e.com1.z0.glb.clouddn.com/%E5%BE%AE%E4%BF%A1.png)
+![i.itest.ren](http://7fvd6e.com1.z0.glb.clouddn.com/DeX_weixin.jpg)
 
