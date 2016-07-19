@@ -208,11 +208,11 @@ AUTO_INCREMENT
 - 自动编号，且必须与主键组合使用
 - 默认情况下，起始值为1，每次的增量为1
 
-	mysql> CREATE TABLE tb3(
-	    -> id SMALLINT UNSIGNED AUTO_INCREMENT,
-	    -> username VARCHAR(30) NOT NULL
-	    -> );
-	ERROR 1075 (42000): Incorrect table definition; there can be only one auto column and it must be defined as a key
+		mysql> CREATE TABLE tb3(
+		    -> id SMALLINT UNSIGNED AUTO_INCREMENT,
+		    -> username VARCHAR(30) NOT NULL
+		    -> );
+		ERROR 1075 (42000): Incorrect table definition; there can be only one auto column and it must be defined as a key
 
 提示必须定义一个主键。
 
@@ -225,20 +225,20 @@ PRIMARY KEY
 - 主键保证记录的唯一性
 - 主键自动为NOT NULL
 
-	mysql> CREATE TABLE tb3(
-	    -> id SMALLINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-	    -> username VARCHAR(30) NOT NULL
-	    -> );
-	Query OK, 0 rows affected (0.04 sec)
-
-	mysql> SHOW COLUMNS FROM tb3;
-	+----------+----------------------+------+-----+---------+----------------+
-	| Field    | Type                 | Null | Key | Default | Extra          |
-	+----------+----------------------+------+-----+---------+----------------+
-	| id       | smallint(5) unsigned | NO   | PRI | NULL    | auto_increment |
-	| username | varchar(30)          | NO   |     | NULL    |                |
-	+----------+----------------------+------+-----+---------+----------------+
-	2 rows in set (0.00 sec)
+		mysql> CREATE TABLE tb3(
+		    -> id SMALLINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+		    -> username VARCHAR(30) NOT NULL
+		    -> );
+		Query OK, 0 rows affected (0.04 sec)
+	
+		mysql> SHOW COLUMNS FROM tb3;
+		+----------+----------------------+------+-----+---------+----------------+
+		| Field    | Type                 | Null | Key | Default | Extra          |
+		+----------+----------------------+------+-----+---------+----------------+
+		| id       | smallint(5) unsigned | NO   | PRI | NULL    | auto_increment |
+		| username | varchar(30)          | NO   |     | NULL    |                |
+		+----------+----------------------+------+-----+---------+----------------+
+		2 rows in set (0.00 sec)
 
 依次插入一条条数据：
 
@@ -311,23 +311,23 @@ UNIQUE KEY
 - 唯一约束的字段可以为空值（NULL）
 - 每张数据表可以存在多个唯一约束
 
-	mysql> CREATE TABLE tb5
-	    -> (
-	    -> id SMALLINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-	    -> username VARCHAR(30) NOT NULL UNIQUE KEY,
-	    -> age TINYINT UNSIGNED
-	    -> );
-	Query OK, 0 rows affected (0.05 sec)
-
-	mysql> SHOW COLUMNS FROM tb5;
-	+----------+----------------------+------+-----+---------+----------------+
-	| Field    | Type                 | Null | Key | Default | Extra          |
-	+----------+----------------------+------+-----+---------+----------------+
-	| id       | smallint(5) unsigned | NO   | PRI | NULL    | auto_increment |
-	| username | varchar(30)          | NO   | UNI | NULL    |                |
-	| age      | tinyint(3) unsigned  | YES  |     | NULL    |                |
-	+----------+----------------------+------+-----+---------+----------------+
-	3 rows in set (0.01 sec)
+		mysql> CREATE TABLE tb5
+		    -> (
+		    -> id SMALLINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+		    -> username VARCHAR(30) NOT NULL UNIQUE KEY,
+		    -> age TINYINT UNSIGNED
+		    -> );
+		Query OK, 0 rows affected (0.05 sec)
+	
+		mysql> SHOW COLUMNS FROM tb5;
+		+----------+----------------------+------+-----+---------+----------------+
+		| Field    | Type                 | Null | Key | Default | Extra          |
+		+----------+----------------------+------+-----+---------+----------------+
+		| id       | smallint(5) unsigned | NO   | PRI | NULL    | auto_increment |
+		| username | varchar(30)          | NO   | UNI | NULL    |                |
+		| age      | tinyint(3) unsigned  | YES  |     | NULL    |                |
+		+----------+----------------------+------+-----+---------+----------------+
+		3 rows in set (0.01 sec)
 
 插入同样的数据会报错：
 
@@ -344,22 +344,22 @@ DEFAULT
 - 默认值
 - 当插入记录时，如果没有明确为字段赋值，则自动赋予默认值。
 
-	mysql> CREATE TABLE tb6(
-	    -> id SMALLINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-	    -> username VARCHAR(20) NOT NULL UNIQUE KEY,
-	    -> sex ENUM('1','2','3') DEFAULT '3'
-	    -> );
-	Query OK, 0 rows affected (0.12 sec)
-
-	mysql> SHOW COLUMNS FROM tb6;
-	+----------+----------------------+------+-----+---------+----------------+
-	| Field    | Type                 | Null | Key | Default | Extra          |
-	+----------+----------------------+------+-----+---------+----------------+
-	| id       | smallint(5) unsigned | NO   | PRI | NULL    | auto_increment |
-	| username | varchar(20)          | NO   | UNI | NULL    |                |
-	| sex      | enum('1','2','3')    | YES  |     | 3       |                |
-	+----------+----------------------+------+-----+---------+----------------+
-	3 rows in set (0.00 sec)
+		mysql> CREATE TABLE tb6(
+		    -> id SMALLINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+		    -> username VARCHAR(20) NOT NULL UNIQUE KEY,
+		    -> sex ENUM('1','2','3') DEFAULT '3'
+		    -> );
+		Query OK, 0 rows affected (0.12 sec)
+	
+		mysql> SHOW COLUMNS FROM tb6;
+		+----------+----------------------+------+-----+---------+----------------+
+		| Field    | Type                 | Null | Key | Default | Extra          |
+		+----------+----------------------+------+-----+---------+----------------+
+		| id       | smallint(5) unsigned | NO   | PRI | NULL    | auto_increment |
+		| username | varchar(20)          | NO   | UNI | NULL    |                |
+		| sex      | enum('1','2','3')    | YES  |     | 3       |                |
+		+----------+----------------------+------+-----+---------+----------------+
+		3 rows in set (0.00 sec)
 
 只插入`username`，表中的`sex`字段默认为`3`：
 
