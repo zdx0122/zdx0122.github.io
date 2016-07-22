@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "H5前端性能测试快速入门"
-date:   2016-07-19 02
+date:   2016-07-22 02
 categories: H5
 ---
 
@@ -83,6 +83,8 @@ categories: H5
 **图片格式**：显示效果较好的图片格式中，有webp、jpg和png24/32这几种常见的图片格式。一般来说，webp的图片最小，但在iOS或者android4.0以下的系统中可能会有兼容性问题需要解决。
 
 - **JPG**:JPG是我们最常使用的方案，大小适中，解码速度快，兼容性问题也基本不存在，是我们在H5的应用中使用起来性价比最高的方案。
+
+
 - **png8**：有些png24|32图片本身颜色较为简单，将其转变为png8得到的显示效果很类似，但却能极大地减少图片的大小。Png24或png32，一般来说，显示效果肯定会比jpg和png8更好，但是实际上人眼很难感知出来，所以在H5应用中要避免这种格式的大图片。当然bmp这种未压缩的图片格式就不应该考虑。
 
 
@@ -201,7 +203,7 @@ CDN内容分发网络（Content Delivery Network）将源站内容发布到最�
 参考资料：
 
 - 腾讯优测公众号
-	- http://mp.weixin.qq.com/s?__biz=MzAxMzYyNDkyNA==&mid=2651332340&idx=1&sn=709daf56dc3e8ee7fb96b4ea90196064&scene=1&srcid=0722dHpHmTRv2HWOeMPF0Djn#wechat_redirect
+	- `http://mp.weixin.qq.com/s?__biz=MzAxMzYyNDkyNA==&mid=2651332340&idx=1&sn=709daf56dc3e8ee7fb96b4ea90196064&scene=1&srcid=0722dHpHmTRv2HWOeMPF0Djn#wechat_redirect`
 - http://kb.cnblogs.com/page/129756/
 	- 作者: Tali Garsiel
 
