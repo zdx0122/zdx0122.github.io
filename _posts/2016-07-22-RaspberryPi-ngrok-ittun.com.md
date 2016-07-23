@@ -104,11 +104,17 @@ cd到解压的目录中，并执行命令：
 
 在ittun_linuxarm目录中，输入：
 
-	ngrok -hostname pi.itest.ren 80
+	./ngrok -hostname pi.itest.ren 80
 
-这时，即可访问 https://pi.itest.ren 
+然后域名服务器那里，解析自定义域名`CNAME`到`ittun.com`
+
+解析生效后，即可访问 https://pi.itest.ren 
 
 注意： 这里是`https`!如果域名没有备案，只能访问https,如果域名已经备案的话，才可以访问http.
+
+目前，未备案也可以访问http了：
+
+域名解析`CNAME`到`ittun.cn`，重新执行命令,即可实现访问http://pi.itest.ren，不过由于ittun.cn是在海外，所以不稳定且速度慢。
 
 ### 利用ngrok同时开通ssh+远程桌面+自定义域名内网映射 ###
 
