@@ -106,9 +106,9 @@ cd到解压的目录中，并执行命令：
 
 	ngrok -hostname pi.itest.ren 80
 
-这时，即可访问 https:pi.itest.ren 
+这时，即可访问 https://pi.itest.ren 
 
-注意： 这里是https!如果域名没有备案，只能访问https,如果域名已经备案的话，才可以访问http.
+注意： 这里是`https`!如果域名没有备案，只能访问https,如果域名已经备案的话，才可以访问http.
 
 ### 利用ngrok同时开通ssh+远程桌面+自定义域名内网映射 ###
 
@@ -132,7 +132,7 @@ yml内容输入如下：
 	  web:
 	    hostname: "*.itest.ren"
 	    proto:
-	      https: 80
+	      http: 80
 
 这里，ssh端口和mstsc端口是自己设置，端口号一定要在50000~59999之间，且不可与其他使用ittun.com的用户设置的端口一致！yml文件内容格式一定不可错误，尤其是空格！
 
