@@ -146,6 +146,12 @@ yml内容输入如下：
 
 如果没有提示出错，则大功告成！
 
+参考资料：
+
+    http://bbs.ittun.com/forum.php?mod=viewthread&tid=1&extra=page%3D1
+
+
+
 示例我在树莓派上搭建的Web服务器： [https://pi.itest.ren/](https://pi.itest.ren/ "https://pi.itest.ren/")
 
 End
