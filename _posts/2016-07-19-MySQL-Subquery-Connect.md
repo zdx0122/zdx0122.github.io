@@ -93,9 +93,9 @@ MySQL在SELECT语句、多表更新、多表删除语句中支持JOIN操作。
 
 数据表参照
 
-table_reference
+	table_reference
 
-tbl_name [[AS] alias] | table_subquery [AS] alias
+	tbl_name [[AS] alias] | table_subquery [AS] alias
 
 数据表可以使用tbl_name AS alias_name 或tbl_name alias_name赋予别名。
 
@@ -127,7 +127,7 @@ RIGHT [OUTER] JOIN,右外连接
 
 ## 关于连接的几点说明 ##
 
-A LEFT JOIN B join_condition
+	A LEFT JOIN B join_condition
 
 数据表B的结果集依赖数据表A。
 
@@ -147,5 +147,5 @@ A LEFT JOIN B join_condition
 
 ## 多表删除 ##
 
-DELETE tbl_name[.*] [, tbl_name[.*]] ... FROM table_references [WHERE where_condition]
+	DELETE tbl_name[.*] [, tbl_name[.*]] ... FROM table_references [WHERE where_condition]
 
