@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "MySQL-数据引擎"
+title:  "MySQL-存储引擎"
 date:   2016-07-19 08
 categories: 数据库
 ---
