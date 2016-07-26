@@ -43,12 +43,12 @@ SQL执行过程：
 
 	COMMENT 'string' | {CONTAINS SQL | NO SQL | READS SQL DATA | MODIFY | SQL DATA | SQL SECURITY {DEFINER | INVOKER}}
 
-- COMMENT: 注释
-- CONTAINS SQL: 包含SQL语句，但不包含读或写数据的语句
-- NO SQL: 不包含SQL语句
-- READS SQL DATA: 包含读数据的语句
-- MODIFIES SQL DATA: 包含写数据的语句
-- SQL SECURITY {DEFINER | INVOKER} 指明谁有权限来执行|
+- `COMMENT`: 注释
+- `CONTAINS SQL`: 包含SQL语句，但不包含读或写数据的语句
+- `NO SQL`: 不包含SQL语句
+- `READS SQL DATA`: 包含读数据的语句
+- `MODIFIES SQL DATA`: 包含写数据的语句
+- `SQL SECURITY {DEFINER | INVOKER}` 指明谁有权限来执行
 
 ### 过程体 ###
 
