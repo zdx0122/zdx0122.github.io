@@ -48,7 +48,7 @@ SQL执行过程：
 - NO SQL: 不包含SQL语句
 - READS SQL DATA: 包含读数据的语句
 - MODIFIES SQL DATA: 包含写数据的语句
-- SQL SECURITY {DEFINER |INVOKER} 指明谁有权限来执行
+- SQL SECURITY {DEFINER | INVOKER} 指明谁有权限来执行
 
 ### 过程体 ###
 
@@ -163,8 +163,7 @@ SQL执行过程：
 ## 创建带有IN和OUT类型参数的存储过程 ##
 
 	mysql> DELIMITER //
-	mysql> CREATE PROCEDURE removeUserAndReturnUserNums(IN p_id INT UNSIGNED, OUT us
-	erNums INT UNSIGNED)
+	mysql> CREATE PROCEDURE removeUserAndReturnUserNums(IN p_id INT UNSIGNED, OUT userNums INT UNSIGNED)
 	    -> BEGIN
 	    -> DELETE FROM users WHERE id = p_id;
 	    -> SELECT count(id) FROM users INTO userNums;
@@ -215,8 +214,7 @@ SQL执行过程：
 删除年龄为10的所有记录，并把删除的记录个数保存到变量，把剩余记录的个数保存到另一个变量：
 
 	mysql> DELIMITER //
-	mysql> CREATE PROCEDURE removeUserByAgeAndReturnInfos(IN P_AGE SMALLINT UNSIGNED
-	, OUT deleteUser SMALLINT UNSIGNED, OUT userCounts SMALLINT UNSIGNED)
+	mysql> CREATE PROCEDURE removeUserByAgeAndReturnInfos(IN P_AGE SMALLINT UNSIGNED, OUT deleteUser SMALLINT UNSIGNED, OUT userCounts SMALLINT UNSIGNED)
 	    -> BEGIN
 	    -> DELETE FROM users WHERE age = p_age;
 	    -> SELECT ROW_COUNT() INTO deleteuser;
