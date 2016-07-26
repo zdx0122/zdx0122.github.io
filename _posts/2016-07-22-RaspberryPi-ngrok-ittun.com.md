@@ -138,9 +138,11 @@ yml内容输入如下：
 	  web:
 	    hostname: "*.itest.ren"
 	    proto:
-	      http: 80
+	      https: 80
 
 这里，ssh端口和mstsc端口是自己设置，端口号一定要在50000~59999之间，且不可与其他使用ittun.com的用户设置的端口一致！yml文件内容格式一定不可错误，尤其是空格！
+
+另外，我的网站没有备案，所以在最后的协议那里写的是`https: 80`，如果是备案域名的话，写`http: 80`。
 
 配置完yml文件，执行： `./ngrok -config ittun.yml start ssh mstsc web`
 
