@@ -48,7 +48,7 @@ SQL执行过程：
 - NO SQL: 不包含SQL语句
 - READS SQL DATA: 包含读数据的语句
 - MODIFIES SQL DATA: 包含写数据的语句
-- SQL SECURITY {DEFINER | INVOKER} 指明谁有权限来执行
+- SQL SECURITY {DEFINER | INVOKER} 指明谁有权限来执行|
 
 ### 过程体 ###
 
