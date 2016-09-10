@@ -50,10 +50,10 @@ categories: Python
      table.col_values(i)
 
 获取行数和列数：
-　　
-    nrows = table.nrows
 
-    ncols = table.ncols
+	nrows = table.nrows
+	
+	ncols = table.ncols
 
 循环行列表数据：
 
@@ -168,3 +168,67 @@ Once you gave a worksheet a name, you can get it as a key of the workbook:
 用行列标记给赋值`openpyxl.worksheet.Worksheet.cell()`：
 
 	d = ws.cell(row=4, column=2, value=10)
+
+
+## openpyxl ##
+
+### Excel数据的类型及组织方式 ###
+
+openpyxl中定义了多种数据格式，我只涉及到了其中最重要的三种：
+
+- `NULL`： 空值，对应于python中的None，表示这个cell里面没有数据。
+- `numberic`： 数字型，统一按照浮点数来进行处理。对应于python中的float。
+- `string`： 字符串型，对应于python中的unicode。
+
+每一个Excel数据文件从上至下分为三个层级的对象：
+
+- `workbook`： 每一个Excel文件就是一个workbook。
+- `sheet`： 每一个workbook中可以包含多个sheet，具体就对应Excel中我们在左下脚所看到的“sheet1”,“sheet2”等。
+- `cell`： 每一个sheet就是我们通常所看到的一个表格，可以含有m行，n列，每个确定的行号，列号所对应的一个格子就是一个cell。
+
+### 从excel读取数据 ###
+
+打开`workbook`：
+
+	from openpyxl import load_workbook
+	wb = load_workbook('file_name.xlsx')
+
+打开所需的`sheet`：
+
+	ws = wb.get_active_sheet()	//打开workbook中的第一个sheet
+
+	ws = wb.get_sheet_by_name("sheet_name")	//通过sheet的名称来获取sheet
+
+	//openpyxl似乎没有提供按索引来读取sheet，不过我们总是能很容易地通过sheet_name来实现
+	sheet_names = wb.get_sheet_names()
+	ws = wb.get_sheet_by_name(sheet_names[index])
+
+获取对应`cell`的值：
+
+	//按照Excel的习惯用字母来代表列号
+	c = ws.cell('A4').value
+	//按照行号列号来读取
+	d = ws.cell(row = 3, column = 0)
+
+### 将数据写入到excel ###
+
+新建`workbook`：
+
+	wb = Workbook()
+
+新建`sheet`：
+
+	ws1 = wb.create_sheet()  # insert at the end
+	ws2 = wb.create_sheet(0)  # insert at the first position
+
+写入数据：
+
+直接将要写入的数据赋值给相应的cell即可，若仅仅是修改一个表。可以跳过前两个步骤，不过要注意不要覆盖掉其它数据：
+
+	ws.cell('B5') = value1
+	ws.cell(row = 3, column = 7) = value2
+
+保存数据：
+
+	wb.save('file_name.xlsx')
+
