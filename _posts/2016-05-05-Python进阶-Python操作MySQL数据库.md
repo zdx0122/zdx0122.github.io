@@ -85,3 +85,4 @@ cursor对象支持的方法：
 - 正常结束事务：conn.commit()
 - 异常结束事务：conn.rollback()
 
+http://www.runoob.com/python/python-mysql.html
