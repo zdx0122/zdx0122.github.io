@@ -17,6 +17,21 @@ categories: 接口测试
 
 安装Ant，配置Ant环境变量；
 
+Ant官网下载： `http://ant.apache.org`
+
+环境变量配置：
+
+`ANT_HOME` : `D:\Program Files\apache-ant-1.9.7`
+
+`Path` : `;%ANT_HOME%\bin`
+
+`CLASSPATH` : `;%ANT_HOME%\lib`
+
+结果：
+
+	C:\Users\daojia>ant -version
+	Apache Ant(TM) version 1.9.7 compiled on April 9 2016
+
 安装Jmeter，配置Jmeter环境变量；
 
 编写或录制要进行接口测试的脚本，保存为.jmx文件。.jmx文件也可以用命令行启动：`jmeter -n -t test.jmx -l test.jtl`
@@ -28,6 +43,10 @@ categories: 接口测试
 		-jtl
 		-build.xml
 		-jmeter_test_case.jmx
+
+将 jmeter的extras目录中ant-jmeter-1.1.1.jar包拷贝至ant安装目录下的lib目录中
+
+修改Jmeter的bin目录下jmeter.properties文件的配置：`jmeter.save.saveservice.output_format=xml`  
 
 ant执行主要是靠build.xml文件，xml中设置Jmeter安装目录、生成报告的路径，定义生成报告的前缀；ant执行的是`target`中的内容，分别是`test`和`report`，`target`的名字是`all`，在配置Jenkins时会用到。
 
