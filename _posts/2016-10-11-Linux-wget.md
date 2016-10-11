@@ -47,7 +47,9 @@ wget 非常稳定，它在带宽很窄的情况下和不稳定网络中有很强
 	-h, –help 打印语法帮助
 	-b, –background 启动后转入后台执行
 	-e, –execute=COMMAND 执行`.wgetrc’格式的命令，wgetrc格式参见/etc/wgetrc或~/.wgetrc
-	记录和输入文件参数：
+
+记录和输入文件参数：
+
 	-o, –output-file=FILE 把记录写到FILE文件中
 	-a, –append-output=FILE 把记录追加到FILE文件中
 	-d, –debug 打印调试输出
@@ -87,7 +89,9 @@ wget 非常稳定，它在带宽很窄的情况下和不稳定网络中有很强
 	-nH, –no-host-directories 不创建主机目录
 	-P, –directory-prefix=PREFIX 将文件保存到目录 PREFIX/…
 	–cut-dirs=NUMBER 忽略 NUMBER层远程目录
-	HTTP 选项参数：
+
+HTTP 选项参数：
+
 	–http-user=USER 设定HTTP用户名为 USER.
 	–http-passwd=PASS 设定http密码为 PASS
 	-C, –cache=on/off 允许/不允许服务器端的数据缓存 (一般情况下允许)
@@ -111,7 +115,9 @@ FTP 选项参数：
 	–passive-ftp 使用被动传输模式 (缺省值).
 	–active-ftp 使用主动传输模式
 	–retr-symlinks 在递归的时候，将链接指向文件(而不是目录)
-	递归下载参数：
+
+递归下载参数：
+
 	-r, –recursive 递归下载－－慎用!
 	-l, –level=NUMBER 最大递归深度 (inf 或 0 代表无穷)
 	–delete-after 在现在完毕后局部删除文件
@@ -119,7 +125,9 @@ FTP 选项参数：
 	-K, –backup-converted 在转换文件X之前，将之备份为 X.orig
 	-m, –mirror 等价于 -r -N -l inf -nr
 	-p, –page-requisites 下载显示HTML文件的所有图片
-	递归下载中的包含和不包含(accept/reject)：
+
+递归下载中的包含和不包含(accept/reject)：
+
 	-A, –accept=LIST 分号分隔的被接受扩展名的列表
 	-R, –reject=LIST 分号分隔的不被接受的扩展名的列表
 	-D, –domains=LIST 分号分隔的被接受域的列表
