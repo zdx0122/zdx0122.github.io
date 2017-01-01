@@ -3,12 +3,13 @@ layout: post
 title:  "Java反射机制"
 date:   2016-12-24 01
 categories: Java
-tags:  年终总结 Dex 2016
+tags:  Java 反射
 author: Dex
 ---
 
 * content
 {:toc}
+
 
 
 
