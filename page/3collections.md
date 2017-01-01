@@ -17,7 +17,7 @@ type: page
 
 ## 编程学习 ##
 
-[http://www.w3school.com.cn/index.html](http://www.w3school.com.cn/index.html "w3school")
+[w3school](http://www.w3school.com.cn/index.html "w3school")
 
 [菜鸟教程](http://www.runoob.com/)
 
