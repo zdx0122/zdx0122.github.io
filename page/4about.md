@@ -23,3 +23,6 @@ type: page
 
 ![i.itest.ren](http://7fvd6e.com1.z0.glb.clouddn.com/DeX_weixin.jpg)
 
+## Comments
+
+{% include comments.html %}
