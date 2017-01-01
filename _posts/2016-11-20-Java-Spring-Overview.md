@@ -3,7 +3,14 @@ layout: post
 title:  "Spring概述"
 date:   2016-11-20 01
 categories: Java
+tags:  Java Spring
+author: Dex
 ---
+
+* content
+{:toc}
+
+Spring 框架是一个开源的 Java 平台，它为容易而快速的开发出耐用的 Java 应用程序提供了全面的基础设施。
 
 
 

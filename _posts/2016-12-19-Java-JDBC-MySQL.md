@@ -3,19 +3,22 @@ layout: post
 title:  "JDBC连接数据库"
 date:   2016-12-19 01
 categories: Java
+tags:  Java DB
+author: Dex
 ---
 
-
-
-
-
-## 介绍 ##
+* content
+{:toc}
 
 JDBC（Java Data Base Connectivity,java数据库连接）是一种用于执行SQL语句的Java API，可以为多种关系数据库提供统一访问，它由一组用Java语言编写的类和接口组成。
 
 JDBC提供了一种基准，据此可以构建更高级的工具和接口，使数据库开发人员能够编写数据库应用程序。
 
 如果要使用数据库就要添加数据库的驱动，不同的数据库有不用的驱动，例如mysql，需要把`mysql-connector-java-3.1.14-bin.jar`build Path到工程里面。
+
+
+
+
 
 
 ## JDBC连接数据库步骤 ##

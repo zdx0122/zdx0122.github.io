@@ -3,7 +3,15 @@ layout: post
 title:  "SpringMVC起步"
 date:   2016-10-23 01
 categories: Java
+tags:  Java SpringMVC
+author: Dex
 ---
+
+* content
+{:toc}
+
+MVC的核心思想是业务数据抽取同业务数据呈现相分离
+
 
 
 
