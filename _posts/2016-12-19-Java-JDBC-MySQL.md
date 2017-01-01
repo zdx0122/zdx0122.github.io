@@ -3,7 +3,7 @@ layout: post
 title:  "JDBC连接数据库"
 date:   2016-12-19 01
 categories: Java
-tags:  Java DB
+tags:  Java 数据库 MySQL
 author: Dex
 ---
 
