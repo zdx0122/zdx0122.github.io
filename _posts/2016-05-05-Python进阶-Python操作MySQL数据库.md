@@ -3,7 +3,16 @@ layout: post
 title:  "Python进阶-Python操作MySQL数据库"
 date:   2016-05-05 02
 categories: Python
+tags:  Python
+author: Dex
 ---
+
+* content
+{:toc}
+
+
+
+
 
 ## Python DB API介绍 ##
 

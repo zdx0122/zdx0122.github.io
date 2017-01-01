@@ -3,7 +3,17 @@ layout: post
 title:  "Python入门(2)-Python变量和数据类型"
 date:   2016-04-22 02
 categories: Python
+tags:  Python
+author: Dex
 ---
+
+* content
+{:toc}
+
+
+
+
+
 
 ## 数据类型 ##
 

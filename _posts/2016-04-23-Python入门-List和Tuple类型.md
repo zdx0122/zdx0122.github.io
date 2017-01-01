@@ -3,7 +3,17 @@ layout: post
 title:  "Python入门(3)-List和Tuple类型"
 date:   2016-04-23 01
 categories: Python
+tags:  Python
+author: Dex
 ---
+
+* content
+{:toc}
+
+
+
+
+
 
 
 ## 创建List ##

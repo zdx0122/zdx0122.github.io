@@ -3,7 +3,17 @@ layout: post
 title:  "【转】Android Monkey 命令行可用的全部选项"
 date:   2016-03-08 
 categories: Android
+tags:  Android ADB
+author: Dex
 ---
+
+* content
+{:toc}
+
+
+
+
+
 
 原文参见：http://www.douban.com/note/257030384/
 

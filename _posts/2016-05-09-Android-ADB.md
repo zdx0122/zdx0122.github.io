@@ -3,7 +3,16 @@ layout: post
 title:  "Android常用adb命令总结"
 date:   2016-05-09 01
 categories: Android
+tags:  Android ADB
+author: Dex
 ---
+
+* content
+{:toc}
+
+
+
+
 
 
 ## Android Debug Bridge ##

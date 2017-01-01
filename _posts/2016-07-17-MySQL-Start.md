@@ -3,7 +3,12 @@ layout: post
 title:  "初涉MySQL"
 date:   2016-07-17 01
 categories: 数据库
+tags:  MySQL 数据库
+author: Dex
 ---
+
+* content
+{:toc}
 
 
 

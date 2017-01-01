@@ -3,7 +3,12 @@ layout: post
 title:  "HttpClient教程"
 date:   2016-06-17 01
 categories: Java
+tags:  Java
+author: Dex
 ---
+
+* content
+{:toc}
 
 
 

@@ -3,7 +3,17 @@ layout: post
 title:  "Android开发入门-使用Intent实现页面跳转"
 date:   2016-03-19 
 categories: Android
+tags:  Android
+author: Dex
 ---
+
+* content
+{:toc}
+
+
+
+
+
 
 ## Android开发入门-使用Intent实现页面跳转 ##
 ### 什么是Intent ###

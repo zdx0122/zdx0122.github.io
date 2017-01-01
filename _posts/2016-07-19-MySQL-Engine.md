@@ -3,7 +3,12 @@ layout: post
 title:  "MySQL-存储引擎"
 date:   2016-07-19 08
 categories: 数据库
+tags:  MySQL 数据库
+author: Dex
 ---
+
+* content
+{:toc}
 
 
 

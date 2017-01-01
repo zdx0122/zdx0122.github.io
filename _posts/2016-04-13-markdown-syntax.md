@@ -3,7 +3,17 @@ layout: post
 title:  "MarkDown语法"
 date:   2016-04-14 01
 categories: GitHub
+tags:  GitHub MarkDown
+author: Dex
 ---
+
+* content
+{:toc}
+
+
+
+
+
 
 > 转载自https://github.com/riku/Markdown-Syntax-CN，感谢作者！
 

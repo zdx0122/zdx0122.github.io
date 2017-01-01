@@ -3,7 +3,12 @@ layout: post
 title:  "MySQL-约束和数据表操作"
 date:   2016-07-19 02
 categories: 数据库
+tags:  MySQL 数据库
+author: Dex
 ---
+
+* content
+{:toc}
 
 
 

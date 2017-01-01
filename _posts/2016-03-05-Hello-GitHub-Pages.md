@@ -3,7 +3,17 @@ layout: post
 title:  "Hello GitHub Pages!"
 date:   2016-03-05 
 categories: GitHub
+tags:  GitHub
+author: Dex
 ---
+
+* content
+{:toc}
+
+
+
+
+
 
 
 

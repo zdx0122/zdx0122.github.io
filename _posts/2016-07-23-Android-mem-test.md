@@ -3,7 +3,13 @@ layout: post
 title:  "Android性能专项-内存测试方法"
 date:   2016-07-23 01
 categories: Android
+tags:  Android
+author: Dex
 ---
+
+* content
+{:toc}
+
 
 
 

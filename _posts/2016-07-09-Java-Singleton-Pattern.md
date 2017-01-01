@@ -3,7 +3,12 @@ layout: post
 title:  "设计模式-单例模式"
 date:   2016-07-09 02
 categories: Java
+tags:  Java
+author: Dex
 ---
+
+* content
+{:toc}
 
 
 

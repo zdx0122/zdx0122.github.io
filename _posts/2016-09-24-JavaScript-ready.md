@@ -3,7 +3,14 @@ layout: post
 title:  "JavaScript"
 date:   2016-09-24 01
 categories: JavaScript
+tags:  JavaScript
+author: Dex
 ---
+
+* content
+{:toc}
+
+
 
 
 
