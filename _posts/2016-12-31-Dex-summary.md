@@ -1,15 +1,20 @@
 ---
 layout: post
 title:  "2016总结"
-date:   2016-12-31 01
+date:   2016-03-12 11:40:18 +0800
 categories: Dex
+tags:  年终总结 Dex 2016
+author: Dex
 ---
 
-
-
-
+* content
+{:toc}
 
 总结就是一次自我思考。
+
+
+
+
 
 ## 学习 ##
 
