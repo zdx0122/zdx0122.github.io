@@ -66,7 +66,7 @@ Docker 容器通过 Docker 镜像来创建。
 - Docker 容器(Container)
 	- 容器是独立运行的一个或一组应用。
 - Docker 客户端(Client)
-	- Docker 客户端通过命令行或者其他工具使用 Docker API (https://docs.docker.com/reference/api/docker_remote_api) 与 Docker 的守护进程通信。
+	- Docker 客户端通过命令行或者其他工具使用 Docker API (https://docs.docker.com/engine/api/) 与 Docker 的守护进程通信。
 - Docker 主机(Host)
 	- 一个物理或者虚拟的机器用于执行 Docker 守护进程和容器。
 - Docker 仓库(Registry)
@@ -232,15 +232,15 @@ Docker 软件包和依赖包已经包含在默认的 CentOS-Extras 软件源里�
 	  验证中      : libsemanage-python-2.1.10-18.el7.x86_64                                                                                                                                  15/15 
 	
 	已安装:
-	  docker.x86_64 0:1.10.3-46.el7.centos.14                                                                                                                                                      
+	  docker.x86_64 0:1.10.3-46.el7.centos.14
 	
 	作为依赖被安装:
 	  audit-libs-python.x86_64 0:2.4.1-5.el7                          checkpolicy.x86_64 0:2.1.12-6.el7                           docker-common.x86_64 0:1.10.3-46.el7.centos.14                   
 	  docker-selinux.x86_64 0:1.10.3-46.el7.centos.14                 libcgroup.x86_64 0:0.41-8.el7                               libseccomp.x86_64 0:2.2.1-1.el7                                  
 	  libselinux-python.x86_64 0:2.2.2-6.el7                          libsemanage-python.x86_64 0:2.1.10-18.el7                   oci-register-machine.x86_64 1:0-1.8.gitaf6c129.el7               
 	  oci-systemd-hook.x86_64 1:0.1.4-4.git41491a3.el7                policycoreutils-python.x86_64 0:2.2.5-20.el7                python-IPy.noarch 0:0.75-6.el7                                   
-	  setools-libs.x86_64 0:3.3.7-46.el7                              yajl.x86_64 0:2.0.4-4.el7                                  
-	
+	  setools-libs.x86_64 0:3.3.7-46.el7                              yajl.x86_64 0:2.0.4-4.el7
+
 	完毕！
 
 启动 Docker 后台服务
