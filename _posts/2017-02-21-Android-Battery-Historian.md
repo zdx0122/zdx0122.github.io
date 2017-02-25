@@ -10,7 +10,7 @@ author: Dex
 * content
 {:toc}
 
-
+简介：Battery historian是一款通过上传bugreport文件分析用户手机中App的电池耗电情况的工具。
 
 
 
@@ -71,9 +71,13 @@ author: Dex
 
 ## 电量测试 ##
 
+### 运行 adb bugreport ###
+
 连接手机，运行命令：`adb bugreport > C:\Users\daojia\bugreport.txt`
 
 进行操作手机App等，运行一段时间后（看自己的运行场景而定），结束上面的命令（Ctrl + C）.
+
+### 上传bugreport.txt文件 ###
 
 把得到的bugreport.txt上传到battery-historian，结果如下：
 
