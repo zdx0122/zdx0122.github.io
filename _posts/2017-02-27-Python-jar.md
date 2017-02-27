@@ -26,6 +26,8 @@ author: Dex
 1. 在python中调用随意调用jar内的方法
 1. 使用python中jpype模块作为桥梁，自己访问jar内的方法
 
+代码：
+
 	#incoding:utf-8
 	 
 	from jpype import *
