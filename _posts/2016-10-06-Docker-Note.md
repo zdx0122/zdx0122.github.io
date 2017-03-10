@@ -159,7 +159,8 @@ docker 的相关安装方法这里不作介绍，具体安装参考[官网文档
 
 ### 3.2 Pull images ###
 
-	$ sudo docker pull ubuntu # 获取 ubuntu 官方镜像 $ sudo docker images # 查看当前镜像列表 
+	$ sudo docker pull ubuntu # 获取 ubuntu 官方镜像 
+	$ sudo docker images # 查看当前镜像列表 
 
 ### 3.3 Running an interactive shell ###
 
@@ -421,34 +422,34 @@ By default all groups have 1024 shares. A group with 100 shares will get a ~10% 
 dockerstart|stop|kill|restart|pause|unpause|rm|commit|inspect|logs
 
 - docker start CONTAINER [CONTAINER...]
-	- # 运行一个或多个停止的容器
+	- #运行一个或多个停止的容器
 - docker stop CONTAINER [CONTAINER...]
-	- # 停掉一个或多个运行的容器-t选项可指定超时时间
+	- #停掉一个或多个运行的容器-t选项可指定超时时间
 - docker kill [OPTIONS] CONTAINER [CONTAINER...]
-	- # 默认 kill 发送 SIGKILL 信号-s可以指定发送 kill 信号类型
+	- #默认 kill 发送 SIGKILL 信号-s可以指定发送 kill 信号类型
 - docker restart [OPTIONS] CONTAINER [CONTAINER...]
-	- # 重启一个或多个运行的容器-t选项可指定超时时间
+	- #重启一个或多个运行的容器-t选项可指定超时时间
 - docker pause CONTAINER
-	- # 暂停一个容器，方便 commit
+	- #暂停一个容器，方便 commit
 - docker unpause CONTAINER
-	- # 继续暂停的容器
+	- #继续暂停的容器
 - docker rm [OPTIONS] CONTAINER [CONTAINER...]
-	- # 移除一个或多个容器
+	- #移除一个或多个容器
 	- -f, --force=false Force removal of running container
 	- -l, --link=false Remove the specified link and not the underlying container
 	- -v, --volumes=false Remove the volumes associated with the container
 - docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]
-	- # 提交指定容器为镜像
+	- #提交指定容器为镜像
 	- -a, --author="" Author (e.g., "John Hannibal Smith hannibal@a-team.com")
 	- -m, --message="" Commit message
 	- -p, --pause=true Pause container during commit
-		- # 默认 commit 是暂停状态
+		- #默认 commit 是暂停状态
 - docker inspect CONTAINER|IMAGE [CONTAINER|IMAGE...]
-	- # 查看容器或者镜像的详细信息
+	- #查看容器或者镜像的详细信息
 - docker logs CONTAINER
-	- # 输出指定容器日志信息
+	- #输出指定容器日志信息
 	- -f, --follow=false Follow log output
-		- # 类似 tail -f
+		- #类似 tail -f
 	- -t, --timestamps=false Show timestamps
 	- --tail="all" Output the specified number of lines at the end of logs (defaults to all logs)
 
@@ -506,13 +507,13 @@ Docker 解决了容器的这两个问题，并且给容器内部服务的访问�
 Dokcer 通过使用 Linux 桥接提供容器之间的通信，docker0 桥接接口的目的就是方便 Docker 管理。当 Docker daemon 启动时需要做以下操作：
 
 - creates the docker0 bridge if not present
-	- # 如果 docker0 不存在则创建
+	- #如果 docker0 不存在则创建
 - searches for an IP address range which doesn’t overlap with an existing route
-	- # 搜索一个与当前路由不冲突的 ip 段
+	- #搜索一个与当前路由不冲突的 ip 段
 - picks an IP in the selected range
-	- # 在确定的范围中选择 ip
+	- #在确定的范围中选择 ip
 - assigns this IP to the docker0 bridge
-	- # 绑定 ip 到 docker0
+	- #绑定 ip 到 docker0
 
 ### 6.1 Docker 四种网络模式 ###
 
@@ -572,13 +573,13 @@ Docker 会尝试寻找没有被主机使用的 ip 段，尽管它适用于大多
 基本步骤如下：
 
 - ensure Docker is stopped
-	- # 确保 docker 的进程是停止的
+	- #确保 docker 的进程是停止的
 - create your own bridge (bridge0 for example)
-	- # 创建自定义网桥
+	- #创建自定义网桥
 - assign a specific IP to this bridge
-	- # 给网桥分配特定的 ip
+	- #给网桥分配特定的 ip
 - start Docker with the -b=bridge0 parameter
-	- # 以 -b 的方式指定网桥
+	- #以 -b 的方式指定网桥
 
 示例：
 
