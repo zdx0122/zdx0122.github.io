@@ -26,13 +26,13 @@ Build Path -> Configure Build Path
 
 ## 第 3 步：创建源文件 ##
 
-创建一个love.daojia的包；
+创建一个love.itest的包；
 
 创建两个HelloWorld.java 和 MainApp.java 文件。
 
 HelloWorld.java ：
 
-	package love.daojia;
+	package love.itest;
 	
 	public class HelloWorld {
 		private String message;
@@ -46,7 +46,7 @@ HelloWorld.java ：
 
 MainApp.java：
 
-	package love.daojia;
+	package love.itest;
 	
 	import org.springframework.context.ApplicationContext;
 	import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -79,7 +79,7 @@ Beans.xml:
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
 	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 	
-	<bean id="helloWorld-beanId" class="love.daojia.HelloWorld">
+	<bean id="helloWorld-beanId" class="love.itest.HelloWorld">
 	<property name="message" value="Hello World!"/>
 	</bean>
 	</beans>
