@@ -34,7 +34,7 @@ Ant官网下载： `http://ant.apache.org`
 
 结果：
 
-	C:\Users\daojia>ant -version
+	C:\Users\xxx>ant -version
 	Apache Ant(TM) version 1.9.7 compiled on April 9 2016
 
 安装Jmeter，配置Jmeter环境变量；
