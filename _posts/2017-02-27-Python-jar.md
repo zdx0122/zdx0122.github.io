@@ -40,7 +40,7 @@ author: Dex
 	 
 	startJVM(jvmpath,'-ea','-Djava.class.path=%s'%(jarpath+'jmeter.utils.jar'))#调用jar包
 	 
-	JDClass=JClass('com.bj58.daojia.app.jmeter.utils.httpEncode')#package name.class name
+	JDClass=JClass('com.xxx.xxx.app.jmeter.utils.httpEncode')#package name.class name
 	 
 	jd=JDClass()#new class
 	 

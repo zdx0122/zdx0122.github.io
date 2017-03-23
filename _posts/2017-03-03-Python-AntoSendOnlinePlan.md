@@ -51,8 +51,8 @@ idea来源：木子白
 ### 爬虫抓取上线计划网页html ###
 
 	# 填写confluence登录地址、上线计划URL、登录帐号密码信息
-	confluenceLoginUrl = 'http://confluence.daojia-inc.com/dologin.action'
-	confluenceOnlinePlanUrl = 'http://confluence.daojia-inc.com/display/proprietary/lr201609'
+	confluenceLoginUrl = 'http://confluence.xxxxx.com/dologin.action'
+	confluenceOnlinePlanUrl = 'http://confluence.xxxxx.com/display/proprietary/lr201609'
 	paramLogin = {'os_username': 'zhangdexi', 'os_password': '123456xx'}
 	 
 	# 抓取html
@@ -160,7 +160,7 @@ idea来源：木子白
 	- 美观性不足
 
 - 限制：
-	1. Confluence上线计划页面的标题只能为“业务线名称 + 年月”，例如丽人业务线的上线计划页面标题为“lr201609”,Confluence生成的链接为：http://confluence.daojia-inc.com/display/proprietary/lr201609
+	1. Confluence上线计划页面的标题只能为“业务线名称 + 年月”，例如丽人业务线的上线计划页面标题为“lr201609”,Confluence生成的链接为：http://confluence.xxxxxx.com/display/proprietary/lr201609
 	2. 默认只会抓取页面中的第一个表格为上线计划，抓取第二个表格为上线过程。
 	3. 上线日期填写格式为20160927，暂不支持其他格式，如2016-09-27，2016927，2016年9月27日等。
 	4. 遇到一个需求分多天上线的情况，不能出现合并单元格的情况，合并单元格会导致第二天的数据抓不到表格中的内容，导致邮件内容飞掉。只需要另写一行上线计划，即可解决。
@@ -266,11 +266,11 @@ idea来源：木子白
 	        return formataddr(( \
 	            Header(name, 'utf-8').encode(), \
 	            addr.encode('utf-8') if isinstance(addr, unicode) else addr))
-	    from_addr = 'xxxxxx@daojia.com'
-	    mail_account = 'xxxxx@daojia.com'
+	    from_addr = 'xxxxxx@xxxx.com'
+	    mail_account = 'xxxxx@xxxx.com'
 	    mail_password = 'xxxxxxxx'
-	    to_addr = ['xxxxx@daojia.com']
-	    #to_addr = ['xxxxxxx@daojia.com']
+	    to_addr = ['xxxxx@xxxx.com']
+	    #to_addr = ['xxxxxxx@xxxx.com']
 	    currentDate = datetime.datetime.now().strftime('%Y年%m月%d日')
 	    mail_Subject = '【Djoy】【丽人_今日上线计划】汇总' + currentDate
 	
@@ -292,9 +292,9 @@ idea来源：木子白
 	
 	if __name__ == '__main__':
 	    currentDate_url = datetime.datetime.now().strftime('%Y%m')
-	    lrOnlinePlanUrl = 'http://confluence.daojia-inc.com/display/proprietary/lr' + currentDate_url
-	    confluenceLoginUrl = 'http://confluence.daojia-inc.com/dologin.action'
-	    #confluenceOnlinePlanUrl = 'http://confluence.daojia-inc.com/display/proprietary/lr201609'
+	    lrOnlinePlanUrl = 'http://confluence.xxxxxx.com/display/proprietary/lr' + currentDate_url
+	    confluenceLoginUrl = 'http://confluence.xxxxx.com/dologin.action'
+	    #confluenceOnlinePlanUrl = 'http://confluence.xxxx.com/display/proprietary/lr201609'
 	    paramLogin = {'os_username': 'xxxxxxxx', 'os_password': 'xxxxxxx'}
 	
 	    #登录confluence, 并获取到上线计划的html
@@ -448,16 +448,16 @@ idea来源：木子白
 	if __name__ == '__main__':
 	    if (datetime.datetime.now().strftime('%d') != '01'):
 	        currentDate_url = datetime.datetime.now().strftime('%Y%m')
-	        lrOnlinePlanUrl = 'http://confluence.daojia-inc.com/display/proprietary/lr' + currentDate_url
+	        lrOnlinePlanUrl = 'http://confluence.xxxxxx.com/display/proprietary/lr' + currentDate_url
 	    else:
 	        currentDate_url = datetime.datetime.now().strftime('%Y%m')
 	        currentDate_url = int(currentDate_url) - 1
-	        lrOnlinePlanUrl = 'http://confluence.daojia-inc.com/display/proprietary/lr' + str(currentDate_url)
+	        lrOnlinePlanUrl = 'http://confluence.xxxxxx.com/display/proprietary/lr' + str(currentDate_url)
 	    print lrOnlinePlanUrl
 	    # currentDate_url = datetime.datetime.now().strftime('%Y%m')
-	    # lrOnlinePlanUrl = 'http://confluence.daojia-inc.com/display/proprietary/lr' + currentDate_url
-	    confluenceLoginUrl = 'http://confluence.daojia-inc.com/dologin.action'
-	    #lrOnlinePlanUrl = 'http://confluence.daojia-inc.com/display/proprietary/lr201609'
+	    # lrOnlinePlanUrl = 'http://confluence.xxxx.com/display/proprietary/lr' + currentDate_url
+	    confluenceLoginUrl = 'http://confluence.xxxxx.com/dologin.action'
+	    #lrOnlinePlanUrl = 'http://confluence.xxxxx.com/display/proprietary/lr201609'
 	    paramLogin = {'os_username': 'xxxx', 'os_password': 'xxxxxxx'}
 	
 	    #登录confluence, 并获取到上线计划的html

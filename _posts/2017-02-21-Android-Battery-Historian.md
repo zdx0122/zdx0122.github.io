@@ -32,18 +32,18 @@ author: Dex
 
 打开git bash:
 
-	daojia@daojia-PC MINGW64 ~
+	xxxx@xxxx-PC MINGW64 ~
 	$ go get -d -u github.com/google/battery-historian/...
 
 找到battery-historian的git目录
 
-	daojia@daojia-PC MINGW64 /e/WorkSpace/GoWorkSpace/src/github.com/google/battery-historian (master)
+	xxxx@xxxx-PC MINGW64 /e/WorkSpace/GoWorkSpace/src/github.com/google/battery-historian (master)
 	$ pwd
 	/e/WorkSpace/GoWorkSpace/src/github.com/google/battery-historian
 
 下载：
 
-	daojia@daojia-PC MINGW64 /e/WorkSpace/GoWorkSpace/src/github.com/google/battery-historian (master)
+	xxxx@xxxx-PC MINGW64 /e/WorkSpace/GoWorkSpace/src/github.com/google/battery-historian (master)
 	$ go run setup.go
 	
 	Downloading Closure library...
@@ -58,7 +58,7 @@ author: Dex
 
 启动： `go run cmd/battery-historian/battery-historian.go`
 
-	daojia@daojia-PC MINGW64 /e/WorkSpace/GoWorkSpace/src/github.com/google/battery-historian (master)
+	xxxx@xxxx-PC MINGW64 /e/WorkSpace/GoWorkSpace/src/github.com/google/battery-historian (master)
 	$ go run cmd/battery-historian/battery-historian.go
 	2017/02/21 14:00:54 Listening on port:  9999
 	2017/02/21 14:00:59 Trace starting analysisServer processing for: GET
@@ -73,7 +73,7 @@ author: Dex
 
 ### 运行 adb bugreport ###
 
-连接手机，运行命令：`adb bugreport > C:\Users\daojia\bugreport.txt`
+连接手机，运行命令：`adb bugreport > C:\Users\xxxx\bugreport.txt`
 
 进行操作手机App等，运行一段时间后（看自己的运行场景而定），结束上面的命令（Ctrl + C）.
 
