@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  ""
+title:  "Monkey测试自动抓取Log"
 date:   2017-03-29 02
-categories: Linux
-tags:  Linux Git 
+categories: Android
+tags:   Android 
 author: Dex
 ---
 
