@@ -25,6 +25,8 @@ type: page
 
 [慕课网](http://www.imooc.com/)
 
+[Read the Docs](https://readthedocs.org/)
+
 ### Java ###
 
 
