@@ -75,3 +75,16 @@ Jenkins中配置git，构建时报错，提示如下：
 	git version 2.3.0
 
 成功！
+
+## 配置Jenkins ##
+
+进入Jenkins-Slave节点-配置从节点；
+
+在Tool Locations中增加一项：
+
+	名称：(Git) Default
+	目录：/opt/soft/git/bin/git	//这里是绝对路径+git执行文件
+
+保存即可！
+
+构建Job就会成功！
