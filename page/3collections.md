@@ -27,6 +27,8 @@ type: page
 
 [Read the Docs](https://readthedocs.org/)
 
+[pythontab-在线手册中心](http://docs.pythontab.com/)
+
 ### Java ###
 
 
