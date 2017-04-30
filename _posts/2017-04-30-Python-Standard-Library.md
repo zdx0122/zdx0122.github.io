@@ -2,7 +2,7 @@
 layout: post
 title:  "Python常用标准库"
 date:   2017-04-30 01
-categories: Dex
+categories: Python
 tags:   Python
 author: Dex
 ---
