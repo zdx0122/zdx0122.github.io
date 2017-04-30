@@ -49,7 +49,8 @@ Flask is a microframework for Python based on Werkzeug, Jinja 2 and good intenti
 	    app.run()
 
 运行Hello-World:
-
+	
+		python hello.py
 	 * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 
 浏览器打开http://127.0.0.1:5000/，即可访问！
