@@ -2,7 +2,7 @@
 layout: post
 title:  "H5前端性能测试快速入门"
 date:   2016-07-22 02
-categories: H5
+categories: 性能测试
 tags:  前端 性能
 author: Dex
 ---
