@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Flask"
+title:  "Flask-快速入门"
 date:   2017-03-29 01
 categories: Python
 tags:   Python Flask
@@ -76,3 +76,33 @@ Flask is a microframework for Python based on Werkzeug, Jinja 2 and good intenti
 
 ## 调试模式 ##
 
+虽然 `run()` 方法适用于启动本地的开发服务器，但是 你每次修改代码后都要手动重启它。这样并不够优雅，而且 `Flask` 可以做到更 好。如果你启用了调试支持，服务器会在代码修改后自动重新载入，并在发生 错误时提供一个相当有用的调试器。
+
+有两种途径来启用调试模式。一种是直接在应用对象上设置:
+
+    app.debug = True
+    app.run()
+另一种是作为 `run` 方法的一个参数传入:
+
+    app.run(debug=True)
+两种方法的效果完全相同。
+
+**注意：**
+
+尽管交互式调试器在允许 fork 的环境中无法正常使用（也即在生产服务器 上正常使用几乎是不可能的），但它依然允许执行任意代码。这使它成为一 个巨大的安全隐患，因此它 **绝对不能用于生产环境** 。
+
+## 路由 ##
+现代 Web 应用的 URL 十分优雅，易于人们辨识记忆，这一点对于那些面向使 用低速网络连接移动设备访问的应用特别有用。如果可以不访问索引页，而是 直接访问想要的那个页面，他们多半会笑逐颜开而再度光顾。
+
+如上所见， route() 装饰器把一个函数绑定到对应的 URL 上。
+
+这里是一些基本的例子:
+
+@app.route('/')
+def index():
+    return 'Index Page'
+
+@app.route('/hello')
+def hello():
+    return 'Hello World'
+但是，不仅如此！你可以构造含有动态部分的 URL，也可以在一个函数上附着 多个规则。

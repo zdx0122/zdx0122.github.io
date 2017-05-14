@@ -122,6 +122,49 @@ Sharing Mode: 设置是否线程共享
 - Handle result set：定义如何处理由callable statements语句返回的结果
 
 
+### 设置QPS限制：Constant Throughput Timer ###
+
+定时器--->Constant Throughput Timer
+
+Constant Throughput Timer 的主要属性介绍：
+
+名称 ：定时器的名称
+
+Target throughput（in samples per minute）：目标吞吐量。注意这里是每分钟发送的请求数，因此，对应测试需求中所要求的20 QPS ，这里的值应该是1200 。
+
+Calculate Throughput based on ：有5个选项，分别是：
+
+　　This thread only ：控制每个线程的吞吐量，选择这种模式时，总的吞吐量为设置的 target Throughput 乘以矣线程的数量。
+
+　　All active threads ： 设置的target Throughput 将分配在每个活跃线程上，每个活跃线程在上一次运行结束后等待合理的时间后再次运行。活跃线程指同一时刻同时运行的线程。
+
+　　All active threads in current thread group ：设置的target Throughput将分配在当前线程组的每一个活跃线程上，当测试计划中只有一个线程组时，该选项和All active threads选项的效果完全相同。
+
+　　All active threads （shared ）：与All active threads 的选项基本相同，唯一的区别是，每个活跃线程都会在所有活跃线程上一次运行结束后等待合理的时间后再次运行。
+
+　　All cative threads in current thread group （shared ）：与All active threads in current thread group 基本相同，唯一的区别是，每个活跃线程都会在所有活跃线程的上一次运行结束后等待合理的时间后再次运行。
+
+当然，Constant Throughput Timer只有在线程组中的线程产生足够多的request 的情况下才有意义，因此，即使设置了Constant Throughput Timer的值，也可能由于线程组中的线程数量不够，或是定时器设置不合理等原因导致总体的QPS不能达到预期目标。
+
+
+### 非GUI测试 ###
+
+	$ /opt/soft/apache-jmeter-3.0/bin/jmeter -n -t yzf.jmx -l yzf.jtl -e -o resultReport
+
+输出html报告，仅在Jmeter3.0以上版本有效。
+
+命令参数说明：
+
+	· -h 帮助 -> 打印出有用的信息并退出
+	· -n 非 GUI 模式 -> 在非 GUI 模式下运行 JMeter
+	· -t 测试文件 -> 要运行的 JMeter 测试脚本文件
+	· -l 日志文件 -> 记录结果的文件
+	· -r 远程执行 -> 启动远程服务
+	· -H 代理主机 -> 设置 JMeter 使用的代理主机
+	· -P 代理端口 -> 设置 JMeter 使用的代理主机的端口号
+	· -e 测试结束后，生成html测试报告,此模式需要在jmeter.property开启jmeter.save.saveservice.output_format=csv
+	· -o 指定测试报告的存放位置
+
 ## Jmeter监控工具 ##
 
 ### 聚合报告 ###
