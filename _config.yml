@@ -1,4 +1,4 @@
-# Welcome to Jekyll!
+﻿# Welcome to Jekyll!
 #
 # This config file is meant for settings that affect your whole blog, values
 # which you are expected to set up once and rarely need to edit after that.
@@ -6,7 +6,7 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: 软件测试的修炼之路
+title: 软件测试修炼之路
 brief-intro: A Tester
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://i.itest.ren" # the base hostname & protocol for your site
