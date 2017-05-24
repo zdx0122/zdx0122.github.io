@@ -110,6 +110,8 @@ Sharing Mode: 设置是否线程共享
 
 #### JDBC Request ####
 
+![](http://zdx0122.qiniudn.com/jdbc-request.png)
+
 重要的参数说明：
 
 - Variable Name：数据库连接池的名字，需要与JDBC Connection Configuration的Variable Name Bound Pool名字保持一致
@@ -121,6 +123,10 @@ Sharing Mode: 设置是否线程共享
 - Query timeout：查询超时时间
 - Handle result set：定义如何处理由callable statements语句返回的结果
 
+
+### BeanShellPreProcessor ###
+
+![](http://zdx0122.qiniudn.com/BeanShellPreProcessor.png)
 
 ### 设置QPS限制：Constant Throughput Timer ###
 
