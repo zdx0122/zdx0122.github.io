@@ -32,7 +32,13 @@ author: Dex
 
 在国内的强烈推荐豆瓣的源 
 
-	http://pypi.douban.com/simple/ 
+	http://pypi.douban.com/simple/
+
+还有阿里的源：
+
+	 https://mirrors.aliyun.com/pypi/simple/
+
+
 
 
 注意后面要有/simple目录。
