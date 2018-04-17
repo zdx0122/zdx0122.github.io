@@ -101,7 +101,10 @@ cmd命令行输出如下：
 很多种方法, 说两个常用的：
 1. 使用RE管理器，进入/data/app/目录，这里看到的就是你app的包名，使用卸载命令时，需要去除后面的数字和apk后缀名。
 2. 问开发人员要
-3. ...
+3. adb shell dumpsys window |findstr mCurrent
+4. adb shell dumpsys window w | findstr \/ | findstr name=
+5. adb shell dumpsys activity | findstr mFocusedActivity
+6. 。。。
 
 ### `adb pull` ###
 
