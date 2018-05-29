@@ -10,6 +10,9 @@ author: Dex
 * content
 {:toc}
 
+大多数的HTTP接口，都是用HttpClient来调用发起请求的。
+
+
 
 
 
@@ -24,6 +27,14 @@ HttpClient是一个客户端的HTTP通信实现库。HttpClient的目标是发�
 官网文档：http://hc.apache.org/httpcomponents-client-4.5.x/index.html
 
 官网教程：http://hc.apache.org/httpcomponents-client-4.5.x/tutorial/html/index.html
+
+`pom.xml`依赖：
+
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5.5</version>
+        </dependency>
 
 ## 功能特色 ##
 
