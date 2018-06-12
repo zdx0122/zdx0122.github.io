@@ -63,11 +63,11 @@ GC过程：
 
 `jinfo`（Configuration Info for Java）的作用是实时地查看和调整虚拟机的各项参数
 
-- -flag <name> pid：打印指定JVM的参数值
-- -flag pid：打印所有非默认JVM的参数值  
-- -flag [+|-]<name> pid：设置指定JVM参数的布尔值
-- -flag <name>=<value> pid：设置指定JVM参数的值
-- -sysprops pid:打印系统变量
+- `-flag <name> pid`：打印指定JVM的参数值
+- `-flag pid`：打印所有非默认JVM的参数值  
+- `-flag [+|-]<name> pid`：设置指定JVM参数的布尔值
+- `-flag <name>=<value> pid`：设置指定JVM参数的值
+- `-sysprops pid`:打印系统变量
 
 ### jstat ###
 
