@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "TestNg官网文档"
+title:  "从一份配置清单详解 Nginx 服务器配置"
 date:   2018-06-12 01
 categories: 服务容器
 tags:  Nginx 
