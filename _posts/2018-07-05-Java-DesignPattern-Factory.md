@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "从一份配置清单详解 Nginx 服务器配置"
-date:   2018-06-12 01
-categories: 服务容器
-tags:  Nginx 
+title:  "设计模式-工厂模式"
+date:   2018-07-05 01
+categories: 设计模式
+tags:  设计模式 Java
 author: Dex
 ---
 
@@ -59,3 +59,16 @@ public interface Shape {
    void draw();
 }
 ```
+
+### 步骤 2
+创建实现接口的实体类。
+
+
+	public class Rectangle implements Shape {
+	 
+	   @Override
+	   public void draw() {
+	      System.out.println("Inside Rectangle::draw() method.");
+	   }
+	}
+
