@@ -29,7 +29,7 @@ author: Dex
 
 ## MonkeyTest.bat ##
 
-	adb shell monkey -v -p com.wuba.liren --ignore-crashes --ignore-timeouts --monitor-native-crashes --ignore-security-exceptions --throttle 500 -s 10 100000 > %monkeylog% && adb reboot
+	adb shell monkey -v -p com.itest.apptest --ignore-crashes --ignore-timeouts --monitor-native-crashes --ignore-security-exceptions --throttle 500 -s 10 100000 > %monkeylog% && adb reboot
 
 
 ## StartMonkey.bat ##
