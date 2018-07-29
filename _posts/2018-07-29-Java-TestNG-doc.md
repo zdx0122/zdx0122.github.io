@@ -244,3 +244,86 @@ TestNG类的配置信息：
 ```bash
 java org.testng.TestNG testng1.xml [testng2.xml testng3.xml ...]
 ```
+
+您需要指定至少一个描述您尝试运行的TestNG套件的XML文件。此外，还提供以下命令行开关：
+
+#### 命令行参数 ####
+
+- `-configfailurepolicy`:跳过 | 继续
+	- TestNG是否应该continue执行套件中的剩余测试，或者如果`@Before*`方法失败则skip它们。默认行为是skip。
+- `-d`:一个目录
+	- 生成报告的目录（默认为`test-output`）。
+- `-dataproviderthreadcount`:并行运行测试时用于数据提供程序的默认线程数。
+	- 这将设置并行运行测试时用于数据提供程序的默认最大线程数。只有选择了并行模式（例如，使用-parallel选项）时，它才会生效。这可以在套件定义中重写。
+- `-excludegroups`:以逗号分隔的组列表。
+	- 要从此运行中排除的组列表。
+- `-groups`:以逗号分隔的组列表。
+	- 要运行的组列表（e.g. "windows,linux,regression"）。
+- `-listener`:可以在类路径中找到的以逗号分隔的Java类列表。
+	- 允许您指定自己的测试侦听器。这些类需要实现`org.testng.ITestListener`
+- `-usedefaultlisteners`:true|false
+	- 是否使用默认侦听器
+- `-methods`:	逗号分隔的完全限定类名和方法列表,例如 com.example.Foo.f1,com.example.Bar.f2.。
+	- 允许您指定要运行的各个方法。
+- `-methodselectors	`：以逗号分隔的Java类列表和定义方法选择器的方法优先级。
+	- 允许您在命令行上指定方法选择器。例如：com.example.Selector1：3，com.example.Selector2：2
+- `-parallel`：methods|tests|classes
+	- 如果指定，则设置用于确定在运行测试时如何使用并行线程的默认机制。如果未设置，则默认机制根本不使用并行线程。这可以在套件定义中重写。
+- `-reporter`:自定义报告侦听器的扩展配置。
+	- 与-listener选项类似，不同之处在于它允许在报告器实例上配置JavaBeans样式的属性。 
+	- 示例：`-reporter com.test.MyReporter:methodFilter=*insert*,enableFiltering=true`
+	- 您可以拥有此选项的出现次数，每个需要添加一个reporter。
+- `-sourcedir`:	以分号分隔的目录列表。
+	- 您的javadoc注解测试源所在的目录。只有在使用javadoc类型注解时才需要此选项。 (e.g. `"src/test"` or `"src/test/org/testng/eclipse-plugin;src/test/org/testng/testng"`).
+- `-suitename`：用于测试套件的默认名称。
+	- 它指定在命令行上定义的测试套件的套件名称。如果suite.xml文件或源代码指定了不同的套件名称，则忽略此选项。如果用“双向”这样的双引号括起来，可以创建一个包含空格的套件名称。
+- `-testclass`：可以在类路径中找到的以逗号分隔的类列表。	
+	- 由逗号分隔的类文件列表(e.g. "org.foo.Test1,org.foo.test2").
+- `-testjar`：一个jar文件。
+	- 指定包含测试类的jar文件。如果在该jar文件的根目录中找到testng.xml文件，则将使用该文件，否则，此jar文件中找到的所有测试类将被视为测试类。
+- `-testname`：用于测试的默认名称。
+	- 它指定在命令行上定义的测试的名称。如果suite.xml文件或源代码指定不同的测试名称，则忽略此选项。如果用双引号“像这样”包围它，可以创建一个带有空格的测试名称。
+- `-testnames`：逗号分隔的测试名称列表。
+	- 只运行匹配其中一个名称的<test>标记中定义的测试。
+- `-testrunfactory`：可以在类路径中找到的Java类。
+	- 允许您指定自己的测试运行器。该类需要实现`org.testng.ITestRunnerFactory`。
+- `-threadcount`：并行运行测试时使用的默认线程数。
+	- 这将设置用于并行运行测试的默认最大线程数。只有选择了并行模式（例如，使用-parallel选项）时，它才会生效。这可以在套件定义中重写。
+- `-xmlpathinjar`：jar文件中的XML文件的路径。
+	- 此属性应包含测试jar中有效XML文件的路径(e.g. "resources/testng.xml")。默认值为"testng.xml"，表示jar文件根目录下的"testng.xml"文件。除非指定了-testjar，否则将忽略此选项。
+
+可以通过不带任何参数调用TestNG来获取此文档。
+
+您还可以将命令行开关放在文本文件中，例如c:\command.txt，并告诉TestNG使用该文件来检索其参数：
+
+```bash
+C:> more c:\command.txt
+-d test-output testng.xml
+C:> java org.testng.TestNG @c:\command.txt
+```
+
+另外，例如，TestNG可以在Java虚拟机的命令行上传递属性
+
+```bash
+java -Dtestng.test.classpath="c:/build;c:/java/classes;" org.testng.TestNG testng.xml
+```
+
+以下是TestNG理解的属性：
+
+系统属性：
+- `testng.test.classpath`：包含测试类的以分号分隔的一系列目录。
+	- 如果设置了此属性，TestNG将使用它来查找测试类而不是类路径。如果您在XML文件中使用package标签并且类路径中有很多类，那么这很方便，其中大部分都不是测试类。
+
+例：
+
+```bash
+java org.testng.TestNG -groups windows,linux -testclass org.test.MyTest
+```
+
+该ant任务和的testng.xml允许你带多个参数（方法，包括指定参数，等...）运行TestNG，所以你应该考虑使用命令行，只有当你试图了解TestNG的命令行，你想get up and running quickly.
+
+要点：如果还指定了一个testng.xml文件（-includedgroups和-excludedgroups除外），它将覆盖testng.xml中找到的所有组包含/排除项，将忽略指定应运行哪些测试的命令行标志。
+
+## 5 - Test methods, Test classes and Test groups ##
+
+未完待续。。。
