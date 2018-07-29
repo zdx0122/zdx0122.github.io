@@ -4,7 +4,7 @@ title:  "设计模式-单例模式"
 date:   2018-07-09 02
 categories: 设计模式
 tags:  设计模式 Java
-author: Dex
+author: i.itest.ren
 ---
 
 * content

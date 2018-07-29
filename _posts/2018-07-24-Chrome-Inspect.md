@@ -4,7 +4,7 @@ title:  "使用Chrome开发者工具调试Android端内网页(微信，QQ，UC�
 date:   2018-07-24 01
 categories: 工具技巧
 tags:  Chrome 工具技巧
-author: Dex
+author: i.itest.ren
 ---
 
 * content

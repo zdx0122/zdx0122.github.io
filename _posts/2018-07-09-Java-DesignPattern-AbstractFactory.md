@@ -4,7 +4,7 @@ title:  "设计模式-抽象工厂模式"
 date:   2018-07-09 01
 categories: 设计模式
 tags:  设计模式 Java
-author: Dex
+author: i.itest.ren
 ---
 
 * content
