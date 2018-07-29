@@ -53,6 +53,32 @@ TestNG是一个测试框架，旨在简化广泛的测试需求，从单元测�
 
 | 项目        | 价格   |  数量  |
 | --------   | -----:  | :----:  |
-| 计算机     | \$1600 |   5     |
+| 
+@BeforeSuite
+@AfterSuite
+@BeforeTest
+@AfterTest
+@BeforeGroups
+@AfterGroups
+@BeforeClass
+@AfterClass
+@BeforeMethod
+@AfterMethod     | TestNG类的配置信息： 
+
+@BeforeSuite：在此套件中的所有测试运行之前，将运行带注释的方法。 
+@AfterSuite：在此套件中的所有测试运行后，将运行带注释的方法。 
+@BeforeTest：在运行属于<test>标记内的类的任何测试方法之前，将运行带注释的方法。 
+@AfterTest：在运行了属于<test>标记内的类的所有测试方法之后，将运行带注释的方法。 
+@BeforeGroups：此配置方法之前将运行的组列表。保证在调用属于任何这些组的第一个测试方法之前不久运行此方法。 
+@AfterGroups：此配置方法将在之后运行的组列表。保证在调用属于任何这些组的最后一个测试方法后不久运行此方法。 
+@BeforeClass：在调用当前类中的第一个测试方法之前，将运行带注释的方法。 
+@AfterClass：在运行当前类中的所有测试方法之后，将运行带注释的方法。 
+@BeforeMethod：带注释的方法将在每个测试方法之前运行。 
+@AfterMethod：带注释的方法将在每个测试方法之后运行。
+TestNG类的超类中的注释行为
+
+当放置在TestNG类的超类上时，上述注释也将被兑现（继承）。例如，这对于在公共超类中集中多个测试类的测试设置非常有用。
+
+在这种情况下，TestNG保证“@Before”方法以继承顺序执行（首先是最高超类，然后是继承链），而“@After”方法则按相反的顺序执行（上传继承链）。 |   5     |
 | 手机        |   \$12   |   12   |
 | 管线        |    \$1    |  234  |
