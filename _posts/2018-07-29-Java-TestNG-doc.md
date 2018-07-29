@@ -167,3 +167,80 @@ TestNG类的配置信息：
   </test>
 </suite>
 ```
+
+您可以指定包名而不是类名：
+
+```xml
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+ 
+<suite name="Suite1" verbose="1" >
+  <test name="Regression1"   >
+    <packages>
+      <package name="test.sample" />
+   </packages>
+ </test>
+</suite>
+```
+
+在此示例中，TestNG将查看包`test.sampl`e中的所有类， 并仅保留具有`TestNG`注解的类。
+
+您还可以指定要包含和排除的组和方法：
+
+```xml
+<test name="Regression1">
+  <groups>
+    <run>
+      <exclude name="brokenTests"  />
+      <include name="checkinTests"  />
+    </run>
+  </groups>
+  
+  <classes>
+    <class name="test.IndividualMethodsTest">
+      <methods>
+        <include name="testMethod" />
+      </methods>
+    </class>
+  </classes>
+</test>
+```
+
+您还可以在`testng.xml`中定义新组，并在属性中指定其他详细信息，例如是否并行运行测试，使用多少线程，是否运行JUnit测试等等... 
+
+默认情况下，TestNG将按照XML文件中的顺序运行测试。如果希望此文件中列出的类和方法以不可预测的顺序运行，请将`preserve-order`属性设置为`false`
+
+```xml
+<test name="Regression1" preserve-order="false">
+  <classes>
+ 
+    <class name="test.Test1">
+      <methods>
+        <include name="m1" />
+        <include name="m2" />
+      </methods>
+    </class>
+ 
+    <class name="test.Test2" />
+ 
+  </classes>
+</test>
+```
+
+请参阅DTD以获取完整的功能列表，或继续阅读。
+
+## 4 - 运行TestNG ##
+
+可以通过不同方式调用TestNG：
+
+- 命令行
+- [ant](https://testng.org/doc/ant.html)
+- [Eclipse](https://testng.org/doc/eclipse.html "Eclipse")
+- [IntelliJ's IDEA](https://testng.org/doc/idea.html)
+
+本节仅介绍如何从命令行调用TestNG。如果您对其他方式感兴趣，请点击上面的链接之一。
+
+假设您的类路径中有TestNG，调用TestNG的最简单方法如下：
+
+```bash
+java org.testng.TestNG testng1.xml [testng2.xml testng3.xml ...]
+```
