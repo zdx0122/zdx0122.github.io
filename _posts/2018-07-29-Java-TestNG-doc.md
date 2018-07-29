@@ -249,7 +249,7 @@ java org.testng.TestNG testng1.xml [testng2.xml testng3.xml ...]
 
 #### 命令行参数 ####
 
-- `-configfailurepolicy`:跳过 | 继续
+- `-configfailurepolicy`:跳过/继续
 	- TestNG是否应该continue执行套件中的剩余测试，或者如果`@Before*`方法失败则skip它们。默认行为是skip。
 - `-d`:一个目录
 	- 生成报告的目录（默认为`test-output`）。
@@ -261,13 +261,13 @@ java org.testng.TestNG testng1.xml [testng2.xml testng3.xml ...]
 	- 要运行的组列表（e.g. "windows,linux,regression"）。
 - `-listener`:可以在类路径中找到的以逗号分隔的Java类列表。
 	- 允许您指定自己的测试侦听器。这些类需要实现`org.testng.ITestListener`
-- `-usedefaultlisteners`:true|false
+- `-usedefaultlisteners`:true/false
 	- 是否使用默认侦听器
 - `-methods`:	逗号分隔的完全限定类名和方法列表,例如 com.example.Foo.f1,com.example.Bar.f2.。
 	- 允许您指定要运行的各个方法。
 - `-methodselectors	`：以逗号分隔的Java类列表和定义方法选择器的方法优先级。
 	- 允许您在命令行上指定方法选择器。例如：com.example.Selector1：3，com.example.Selector2：2
-- `-parallel`：methods|tests|classes
+- `-parallel`：methods/tests/classes
 	- 如果指定，则设置用于确定在运行测试时如何使用并行线程的默认机制。如果未设置，则默认机制根本不使用并行线程。这可以在套件定义中重写。
 - `-reporter`:自定义报告侦听器的扩展配置。
 	- 与-listener选项类似，不同之处在于它允许在报告器实例上配置JavaBeans样式的属性。 
