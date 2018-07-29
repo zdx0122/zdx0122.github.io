@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "TestNG官网文档中文版"
+title:  "TestNG官方文档中文版"
 date:   2018-07-29 01
 categories: Java
 tags:  Java TestNG
@@ -92,3 +92,78 @@ TestNG类的配置信息：
 - `name` 此数据提供者的名称。如果未提供，则此data provider的名称将自动设置为其方法的名称。
 - `parallel` 如果设置为true，则使用此数据提供程序生成的测试将并行运行。默认值为false。
 
+### @Factory ###
+
+将方法标记为工厂，返回将由TestNG用作Test类的对象。该方法必须返回`Object[]`。
+
+### @Listeners ###
+
+在测试类上定义侦听器。
+
+参数：
+
+`value` 扩展`org.testng.ITestNGListener`的类数组。
+
+### @Parameters ###
+
+描述如何将参数传递给`@Test`方法。
+
+参数：
+
+`value` 用于填充此方法参数的变量列表。
+
+### @Test ###
+
+将类或方法标记为测试的一部分。
+
+#### @Test的参数 ####
+
+- `alwaysRun`	如果设置为true，则即使依赖于失败的方法，也始终会运行此测试方法。
+- `dataProvider`	此测试方法的数据提供程序的名称。
+- `dataProviderClass`	查找数据提供程序的类。如果未指定，则将在当前测试方法的类或其基类之一上查找数据提供程序。如果指定了此属性，则数据提供程序方法必须在指定的类上是静态的。
+- `dependsOnGroups`	此方法所依赖的组列表。
+- `dependsOnMethods`	此方法所依赖的方法列表。
+- `description`	此方法的描述。
+- `enabled`	是否启用此类/方法上的方法。
+- `expectedExceptions`	预期测试方法抛出的异常列表。如果抛出此列表中没有异常或不同异常，则此测试将标记为失败。
+- `groups`	此类/方法所属的组列表。
+- `invocationCount`	应该调用此方法的次数。
+- `invocationTimeOut`	此测试应对所有调用计数的累计时间应采用的最大毫秒数。如果未指定invocationCount，则将忽略此属性。
+- `priority`	此测试方法的优先级。将优先安排较低的优先事项。
+- `successPercentage`	此方法预期的成功百分比
+- `singleThreaded`	如果设置为true，则此测试类上的所有方法都保证在同一个线程中运行，即使当前正在使用`parallel = "methods"`运行测试。此属性只能在类级别使用，如果在方法级别使用，它将被忽略。注意：此属性曾被称为`sequential`（现已弃用）。
+- `timeOut`	此测试应采用的最大毫秒数。
+- `threadPoolSize`	此方法的线程池大小。该方法将从invocationCount指定的多个线程调用。注意：如果未指定invocationCount，则忽略此属性
+
+## 3 - testng.xml ##
+
+您可以通过几种不同的方式调用TestNG：
+
+- 使用`testng.xml`文件
+- 用`ant`
+- 从命令行
+
+本节介绍testng.xml的格式（您将在下面找到有关ant和命令行的文档）。
+
+可以在主网站上找到`testng.xml`的当前`DTD`:[testng-1.0.dtd](http://testng.org/testng-1.0.dtd) （为方便起见，您可能更喜欢浏览 [HTML版本](http://testng.org/dtd)）。
+
+这是一个示例`testng.xml`文件：
+
+```xml
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+  
+<suite name="Suite1" verbose="1" >
+  <test name="Nopackage" >
+    <classes>
+       <class name="NoPackageTest" />
+    </classes>
+  </test>
+ 
+  <test name="Regression1">
+    <classes>
+      <class name="test.sample.ParameterSample"/>
+      <class name="test.sample.ParameterTest"/>
+    </classes>
+  </test>
+</suite>
+```
