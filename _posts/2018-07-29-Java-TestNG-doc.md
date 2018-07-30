@@ -326,4 +326,206 @@ java org.testng.TestNG -groups windows,linux -testclass org.test.MyTest
 
 ## 5 - Test methods, Test classes and Test groups ##
 
-未完待续。。。
+### 5.1 - 测试方法 ###
+
+测试方法用`@Test`注解。除非在`testng.xml`中将`allow-return-values`设置为`true`，否则将忽略使用`@Test`注解恰好返回值的方法：
+
+```xml
+<suite allow-return-values="true">
+ 
+or
+ 
+<test allow-return-values="true">
+```
+
+### 5.2 - 测试组 ###
+
+TestNG允许您执行复杂的测试方法分组。您不仅可以声明方法属于组，还可以指定包含其他组的组。然后可以调用TestNG并要求包括一组特定的组（或正则表达式），同时排除另一组。这为您分区测试提供了最大的灵活性，如果您想要连续运行两组不同的测试，则不需要重新编译任何内容。
+
+组在testng.xml文件中指定，可以在<test>或<suite>标记下找到。<suite>标记中指定的组适用于下面的所有<test>标记。请注意，组在这些标记中是累积的：如果在<suite>中指定组“a”，在<test>中指定“b” ，则将包括“a”和“b”。
+
+例如，至少有两类测试是很常见的
+
+- 准入测试。应在提交新代码之前运行这些测试。它们通常应该很快，并确保没有基本功能被破坏。
+- 功能测试。这些测试应涵盖您软件的所有功能，并且每天至少运行一次，尽管理想情况下您希望连续运行它们。
+
+通常，准入测试是功能测试的子集。TestNG允许您以非常直观的方式使用测试组指定。例如，您可以通过说您的整个测试类属于“functest”组来构建测试，另外还有一些方法属于“checkintest”组：
+
+```java
+public class Test1 {
+  @Test(groups = { "functest", "checkintest" })
+  public void testMethod1() {
+  }
+ 
+  @Test(groups = {"functest", "checkintest"} )
+  public void testMethod2() {
+  }
+ 
+  @Test(groups = { "functest" })
+  public void testMethod3() {
+  }
+}
+```
+
+用以下方式调用TestNG：
+
+```java
+<test name="Test1">
+  <groups>
+    <run>
+      <include name="functest"/>
+    </run>
+  </groups>
+  <classes>
+    <class name="example1.Test1"/>
+  </classes>
+</test>
+```
+
+将运行该类中的所有测试方法，而使用checkintest调用它将只运行 testMethod1（）和testMethod2（）。
+
+这是另一个例子，这次使用正则表达式。假设您的某些测试方法不应该在Linux上运行，您的测试将如下所示：
+
+```java
+@Test
+public class Test1 {
+  @Test(groups = { "windows.checkintest" })
+  public void testWindowsOnly() {
+  }
+ 
+  @Test(groups = {"linux.checkintest"} )
+  public void testLinuxOnly() {
+  }
+ 
+  @Test(groups = { "windows.functest" )
+  public void testWindowsToo() {
+  }
+}
+```
+
+您可以使用以下testng.xml仅启动Windows方法：
+
+```java
+<test name="Test1">
+  <groups>
+    <run>
+      <include name="windows.*"/>
+    </run>
+  </groups>
+ 
+  <classes>
+    <class name="example1.Test1"/>
+  </classes>
+</test>
+```
+
+注意：TestNG使用正则表达式，而不是wildmats。请注意区别（例如，"anything" is matched by "`.*`" -- dot star -- and not "*"）。
+
+**方法组**
+
+您还可以排除或包含单个方法：
+
+```java
+<test name="Test1">
+  <classes>
+    <class name="example1.Test1">
+      <methods>
+        <include name=".*enabledTestMethod.*"/>
+        <exclude name=".*brokenTestMethod.*"/>
+      </methods>
+     </class>
+  </classes>
+</test>
+```
+
+这可以派上用来停用单个方法而不必重新编译任何东西，但是我不建议过多地使用这种技术，因为如果你开始重构你的Java代码（正则表达式中使用的正则表达式），它会使你的测试框架崩溃。标签可能不再符合您的方法）。
+
+### 5.3 - 群组 ###
+
+组还可以包括其他组。这些组称为“MetaGroups”。例如，您可能希望定义包含“checkintest”和“functest”的组“all”。“functest”本身将包含“windows”和“linux”组，而“checkintest将只包含”windows“。以下是如何在属性文件中定义它：
+
+```xml
+<test name="Regression1">
+  <groups>
+    <define name="functest">
+      <include name="windows"/>
+      <include name="linux"/>
+    </define>
+  
+    <define name="all">
+      <include name="functest"/>
+      <include name="checkintest"/>
+    </define>
+  
+    <run>
+      <include name="all"/>
+    </run>
+  </groups>
+  
+  <classes>
+    <class name="test.sample.Test1"/>
+  </classes>
+</test>
+```
+
+### 5.4 - 排除组 ###
+
+TestNG允许您包含组以及排除它们。
+
+例如，由于最近的更改而暂时中断测试通常很常见，而您还没有时间修复破损。但是，您确实想要进行功能测试的干净运行，因此需要停用这些测试，但请记住需要重新激活它们。
+
+解决此问题的一种简单方法是创建一个名为“broken”的组，并使这些测试方法属于它。例如，在上面的例子中，我知道testMethod2（）现在已经坏了所以我想禁用它：
+
+```java
+@Test(groups = {"checkintest", "broken"} )
+public void testMethod2() {
+}
+```
+
+我现在需要做的就是从运行中排除这个组：
+
+```xml
+<test name="Simple example">
+  <groups>
+    <run>
+      <include name="checkintest"/>
+      <exclude name="broken"/>
+    </run>
+  </groups>
+  
+  <classes>
+    <class name="example1.Test1"/>
+  </classes>
+</test>
+```
+这样，我将获得一个干净的测试运行，同时跟踪哪些测试被破坏，需要稍后修复。
+
+注意：您还可以使用@Test和@ Before / After注解上的“enabled”属性逐个禁用测试。
+
+### 5.5 - 部分组 ###
+
+测试方法不必是无参数的。您可以在每个测试方法上使用任意数量的参数，并指示TestNG使用@Parameters注解向您传递正确的参数。
+
+有两种方法可以设置这些参数：使用testng.xml或以编程方式。
+
+#### 5.6.1 - testng.xml中的参数
+
+如果您对参数使用简单值，则可以在testng.xml中指定它们 ：
+
+```java
+@Parameters({ "first-name" })
+@Test
+public void testSingleString(String firstName) {
+  System.out.println("Invoked testString " + firstName);
+  assert "Cedric".equals(firstName);
+}
+```
+
+在此代码中，我们指定Java方法的参数firstName应该接收名为first-name的XML参数的值。  此XML参数在testng.xml中定义：
+
+```xml
+<suite name="My suite">
+  <parameter name="first-name"  value="Cedric"/>
+  <test name="Simple example">
+  <-- ... -->
+```
