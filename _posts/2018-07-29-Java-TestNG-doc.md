@@ -529,3 +529,148 @@ public void testSingleString(String firstName) {
   <test name="Simple example">
   <-- ... -->
 ```
+
+`@ Before / After`和`@Factory`注解可以使用相同的技术：
+
+```java
+@Parameters({ "datasource", "jdbcDriver" })
+@BeforeMethod
+public void beforeTest(String ds, String driver) {
+  m_dataSource = ...;                              // look up the value of datasource
+  m_jdbcDriver = driver;
+}
+```
+
+这次，两个Java参数ds 和驱动程序将分别接收赋予属性datasource 和jdbc-driver的值。 
+可以使用`Optional`注解将参数声明为可选：
+
+```
+@Parameters("db")
+@Test
+public void testNonExistentParameter(@Optional("mysql") String db) { ... }
+```
+
+如果在testng.xml文件中找不到名为“db”的参数，则测试方法将接收`@Optional`注解中指定的默认值：“mysql”。
+
+在`@Parameters`注解可以被放置在下列位置：
+
+在任何已经有`@Test`，`@Before/After`或`@Factory`注解的方法上。
+
+最多只有一个测试类的构造函数。在这种情况下，TestNG将调用此特定构造函数，并在需要实例化测试类时将参数初始化为testng.xml中指定的值。此功能可用于将类中的字段初始化为测试方法随后将使用的值。
+
+笔记：
+
+XML参数按照与注解中相同的顺序映射到Java参数，如果数字不匹配，TestNG将发出错误。
+
+参数是作用域的。在testng.xml中，您可以在<suite>标记下或<test>下声明它们 。如果两个参数具有相同的名称，则它是<test>中定义的具有优先权的参数。如果您需要指定适用于所有测试的参数并仅为某些测试覆盖其值，这将非常方便。
+
+#### 5.6.2 - 使用DataProviders的参数
+
+如果需要传递复杂参数或需要从Java创建的参数（复杂对象，从属性文件或数据库读取的对象等等），则在testng.xml中指定参数可能不够。在这种情况下，您可以使用数据提供程序提供测试所需的值。数据提供程序是类上的一个方法，它返回一组对象数组。此方法使用`@DataProvider`注解：
+
+```java
+//This method will provide data to any test method that declares that its Data Provider
+//is named "test1"
+@DataProvider(name = "test1")
+public Object[][] createData1() {
+ return new Object[][] {
+   { "Cedric", new Integer(36) },
+   { "Anne", new Integer(37)},
+ };
+}
+ 
+//This test method declares that its data should be supplied by the Data Provider
+//named "test1"
+@Test(dataProvider = "test1")
+public void verifyData1(String n1, Integer n2) {
+ System.out.println(n1 + " " + n2);
+}
+```
+将打印
+
+```java
+Cedric 36
+Anne 37
+```
+
+`@Test`方法指定了与数据提供数据提供程序属性。此名称必须与使用匹配名称的`@DataProvider(name="...")`注解的同一类上的方法相对应。
+
+默认情况下，将在当前测试类或其中一个基类中查找数据提供程序。如果要将数据提供程序放在不同的类中，则需要使用静态方法或具有非arg构造函数的类，并指定可在dataProviderClass属性中找到的类：
+
+```java
+public class StaticProvider {
+  @DataProvider(name = "create")
+  public static Object[][] createData() {
+    return new Object[][] {
+      new Object[] { new Integer(42) }
+    };
+  }
+}
+ 
+public class MyTest {
+  @Test(dataProvider = "create", dataProviderClass = StaticProvider.class)
+  public void test(Integer n) {
+    // ...
+  }
+}
+```
+数据提供者也支持注入。TestNG将使用测试上下文进行注射。Data Provider方法可以返回以下两种类型之一：
+
+- 一组对象数组（`Object[][]`），其中第一个维度的大小是调用测试方法的次数，第二个维度大小包含必须与测试的参数类型兼容的对象数组方法。这是上述示例所示的情况。
+- 一个`Iterator<Object[]> `。与`Object[][]`的唯一区别在于`Iterator`允许您懒惰地创建测试数据。TestNG将调用迭代器，然后使用此迭代器返回的参数逐个调用测试方法。如果您有许多参数集要传递给方法，并且您不想预先创建所有参数集，则此功能特别有用。
+
+以下是此功能的示例：
+
+```java
+@DataProvider(name = "test1")
+public Iterator<Object[]> createData() {
+  return new MyIterator(DATA);
+}
+```
+
+如果将`@DataProvider`声明为将`java.lang.reflect.Method` 作为第一个参数，TestNG将传递第一个参数的当前测试方法。当多个测试方法使用相同的`@DataProvider`并且您希望它根据为其提供数据的测试方法返回不同的值时，这尤其有用。
+
+例如，以下代码在其`@DataProvider`中打印测试方法的名称：
+
+```java
+@DataProvider(name = "dp")
+public Object[][] createData(Method m) {
+  System.out.println(m.getName());  // print test method name
+  return new Object[][] { new Object[] { "Cedric" }};
+}
+ 
+@Test(dataProvider = "dp")
+public void test1(String s) {
+}
+ 
+@Test(dataProvider = "dp")
+public void test2(String s) {
+}
+```
+
+因此将显示：
+
+```java
+test1
+test2
+```
+
+数据提供程序可以与并行属性并行运行：
+
+```java
+@DataProvider(parallel = true)
+// ...
+```
+
+从XML文件运行的并行数据提供程序共享相同的线程池，默认情况下大小为10。您可以在XML文件的<suite>标记中修改此值：
+
+```xml
+<suite name="Suite1" data-provider-thread-count="20" >
+...
+```
+
+如果要在不同的线程池中运行几个特定的​​数据提供程序，则需要从其他XML文件运行它们。
+
+#### 5.6.3 - 报告中的参数
+
+未完待续。。。
