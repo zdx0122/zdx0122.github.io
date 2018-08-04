@@ -4,7 +4,7 @@ title:  "搭建支持外网访问的树莓派Web服务器"
 date:   2016-07-22 03
 categories: 折腾
 tags:  树莓派
-author: Dex
+author: i.itest.ren
 ---
 
 * content

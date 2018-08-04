@@ -4,7 +4,7 @@ title:  "Jmeter工具常用功能和性能监控插件"
 date:   2017-03-10 01
 categories: 性能测试
 tags:  性能测试 Jmeter
-author: Dex
+author: i.itest.ren
 ---
 
 * content

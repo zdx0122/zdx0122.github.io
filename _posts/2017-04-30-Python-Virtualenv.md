@@ -4,7 +4,7 @@ title:  "Python-virtualenv"
 date:   2017-04-30 02
 categories: Python
 tags:   Python
-author: Dex
+author: i.itest.ren
 ---
 
 * content

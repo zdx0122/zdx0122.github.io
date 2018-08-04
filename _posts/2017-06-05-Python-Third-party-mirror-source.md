@@ -4,7 +4,7 @@ title:  "Python的国内第三方镜像源"
 date:   2017-06-05 01
 categories: Python
 tags:  Python 
-author: Dex
+author: i.itest.ren
 ---
 
 * content

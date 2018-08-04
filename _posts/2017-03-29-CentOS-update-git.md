@@ -4,7 +4,7 @@ title:  "CentOS6.5升级Git版本"
 date:   2017-03-29 01
 categories: Linux
 tags:  Linux Git 
-author: Dex
+author: i.itest.ren
 ---
 
 * content

@@ -4,7 +4,7 @@ title:  "Bash教程"
 date:   2017-09-10 01
 categories: Linux
 tags:  Linux Shell
-author: Dex
+author: i.itest.ren
 ---
 
 * content

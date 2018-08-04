@@ -3,8 +3,8 @@ layout: post
 title:  "如何组织头脑风暴"
 date:   2017-01-10 12:36:49 +0800
 categories: Dex
-tags:  工作宝典
-author: Dex
+tags:  软能力
+author: i.itest.ren
 ---
 
 * content

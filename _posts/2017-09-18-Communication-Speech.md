@@ -3,8 +3,8 @@ layout: post
 title:  "互联网公司常常会有知识分享会，做为演讲者，如何..."
 date:   2017-09-18 02
 categories: Dex
-tags:  Dex
-author: Dex
+tags:  软能力
+author: i.itest.ren
 ---
 
 * content

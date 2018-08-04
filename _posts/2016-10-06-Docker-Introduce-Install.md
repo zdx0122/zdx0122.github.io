@@ -4,7 +4,7 @@ title:  "Docker介绍及安装"
 date:   2016-10-06 01
 categories: Docker
 tags:  Docker
-author: Dex
+author: i.itest.ren
 ---
 
 * content

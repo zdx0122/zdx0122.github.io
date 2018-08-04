@@ -4,7 +4,7 @@ title:  "初识机器学习"
 date:   2017-08-05 01
 categories: 人工智能
 tags:  机器学习
-author: Dex
+author: i.itest.ren
 ---
 
 * content

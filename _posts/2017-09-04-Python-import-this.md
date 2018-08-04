@@ -4,7 +4,7 @@ title:  "Python的设计哲学"
 date:   2017-09-04 01
 categories: Python
 tags:  Python
-author: Dex
+author: i.itest.ren
 ---
 
 * content

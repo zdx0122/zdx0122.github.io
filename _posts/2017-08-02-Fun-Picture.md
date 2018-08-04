@@ -3,8 +3,8 @@ layout: post
 title:  "有趣的图片"
 date:   2017-08-02 01
 categories: Dex
-tags:  Dex
-author: Dex
+tags:  软能力
+author: i.itest.ren
 ---
 
 * content

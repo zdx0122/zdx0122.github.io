@@ -4,7 +4,7 @@ title:  "性能测试监控"
 date:   2017-03-10 02
 categories: 性能测试
 tags:  性能测试 Jmeter
-author: Dex
+author: i.itest.ren
 ---
 
 * content

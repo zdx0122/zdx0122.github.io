@@ -4,7 +4,7 @@ title:  "JVM运维实践"
 date:   2018-06-10 01
 categories: Java
 tags:  Java
-author: Dex
+author: i.itest.ren
 ---
 
 * content

@@ -4,7 +4,7 @@ title:  "Telnet查看Dubbo服务"
 date:   2017-03-23 01
 categories: Java
 tags:  Java 
-author: Dex
+author: i.itest.ren
 ---
 
 * content

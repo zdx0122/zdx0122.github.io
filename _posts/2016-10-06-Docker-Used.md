@@ -4,7 +4,7 @@ title:  "Docker使用"
 date:   2016-10-06 02
 categories: Docker
 tags:  Docker
-author: Dex
+author: i.itest.ren
 ---
 
 * content

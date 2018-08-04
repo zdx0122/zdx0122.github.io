@@ -4,7 +4,7 @@ title:  "设计模式之设计原则"
 date:   2017-01-08 12:34:49 +0800
 categories: 设计模式
 tags:  设计模式
-author: Dex
+author: i.itest.ren
 ---
 
 * content

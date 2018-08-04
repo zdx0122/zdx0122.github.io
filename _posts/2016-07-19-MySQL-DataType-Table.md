@@ -4,7 +4,7 @@ title:  "MySQL-数据类型和操作数据库表"
 date:   2016-07-19 01
 categories: 数据库
 tags:  MySQL 数据库
-author: Dex
+author: i.itest.ren
 ---
 
 * content

@@ -4,7 +4,7 @@ title:  "MySQL-存储过程"
 date:   2016-07-19 07
 categories: 数据库
 tags:  MySQL 数据库
-author: Dex
+author: i.itest.ren
 ---
 
 * content

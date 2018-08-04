@@ -4,7 +4,7 @@ title:  "MySQL-运算符和函数"
 date:   2016-07-19 05
 categories: 数据库
 tags:  MySQL 数据库
-author: Dex
+author: i.itest.ren
 ---
 
 * content

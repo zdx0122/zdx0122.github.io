@@ -4,7 +4,7 @@ title:  "MySQL性能优化"
 date:   2017-07-09 01
 categories: MySQL
 tags:  MySQL 性能
-author: Dex
+author: i.itest.ren
 ---
 
 * content

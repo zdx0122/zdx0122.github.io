@@ -4,7 +4,7 @@ title:  "Linux命令-wget"
 date:   2016-10-11 01
 categories: Linux
 tags:  Linux
-author: Dex
+author: i.itest.ren
 ---
 
 * content

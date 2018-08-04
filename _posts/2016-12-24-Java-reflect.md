@@ -4,7 +4,7 @@ title:  "Java反射机制"
 date:   2016-12-24 01
 categories: Java
 tags:  Java 反射
-author: Dex
+author: i.itest.ren
 ---
 
 * content

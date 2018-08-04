@@ -4,7 +4,7 @@ title:  "树莓派安装Docker"
 date:   2017-05-21 01
 categories: Docker
 tags:  Docker 树莓派
-author: Dex
+author: i.itest.ren
 ---
 
 * content

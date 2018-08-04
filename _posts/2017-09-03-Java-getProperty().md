@@ -4,7 +4,7 @@ title:  "Java中System.getProperty()方法详解"
 date:   2017-09-03 02
 categories: Java
 tags:  Java
-author: Dex
+author: i.itest.ren
 ---
 
 * content

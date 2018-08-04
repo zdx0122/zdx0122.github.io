@@ -4,7 +4,7 @@ title:  "Python操作jar包"
 date:   2017-02-27 01
 categories: Python
 tags:  Python Java
-author: Dex
+author: i.itest.ren
 ---
 
 * content

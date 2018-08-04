@@ -4,7 +4,7 @@ title:  "Docker实例"
 date:   2016-10-06 03
 categories: Docker
 tags:  Docker
-author: Dex
+author: i.itest.ren
 ---
 
 * content

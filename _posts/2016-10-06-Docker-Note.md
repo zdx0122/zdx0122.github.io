@@ -4,7 +4,7 @@ title:  "Docker学习笔记"
 date:   2016-10-06 04
 categories: Docker
 tags:  Docker
-author: Dex
+author: i.itest.ren
 ---
 
 * content

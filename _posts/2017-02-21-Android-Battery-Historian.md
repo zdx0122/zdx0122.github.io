@@ -4,7 +4,7 @@ title:  "Android电量测试：battery-historian"
 date:   2017-02-21 01
 categories: Android
 tags:  Android 电量测试
-author: Dex
+author: i.itest.ren
 ---
 
 * content
