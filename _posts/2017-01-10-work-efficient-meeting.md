@@ -2,7 +2,7 @@
 layout: post
 title:  "如何高效的进行会议"
 date:   2017-01-10 12:37:49 +0800
-categories: Dex
+categories: 软能力
 tags:  软能力
 author: i.itest.ren
 ---

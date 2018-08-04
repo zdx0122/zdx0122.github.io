@@ -2,7 +2,7 @@
 layout: post
 title:  "有趣的图片"
 date:   2017-08-02 01
-categories: Dex
+categories: 软能力
 tags:  软能力
 author: i.itest.ren
 ---

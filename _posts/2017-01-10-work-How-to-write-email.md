@@ -2,7 +2,7 @@
 layout: post
 title:  "如何写工作邮件"
 date:   2017-01-10 12:34:49 +0800
-categories: Dex
+categories: 软能力
 tags:  软能力
 author: i.itest.ren
 ---
