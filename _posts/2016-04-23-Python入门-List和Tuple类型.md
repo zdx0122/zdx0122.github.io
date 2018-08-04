@@ -4,7 +4,7 @@ title:  "Python入门(3)-List和Tuple类型"
 date:   2016-04-23 01
 categories: Python
 tags:  Python
-author: Dex
+author: i.itest.ren
 ---
 
 * content

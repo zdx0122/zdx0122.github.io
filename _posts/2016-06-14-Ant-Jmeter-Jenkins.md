@@ -4,7 +4,7 @@ title:  "Ant+Jmeter+Jenkins实现接口测试自动化"
 date:   2016-06-14 01
 categories: 接口测试
 tags:  接口测试
-author: Dex
+author: i.itest.ren
 ---
 
 * content

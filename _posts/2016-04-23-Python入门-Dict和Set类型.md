@@ -4,7 +4,7 @@ title:  "Python入门(5)-Dict和Set类型"
 date:   2016-04-23 03
 categories: Python
 tags:  Python
-author: Dex
+author: i.itest.ren
 ---
 
 * content

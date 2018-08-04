@@ -4,7 +4,7 @@ title:  "Java测试框架-TestNG入门"
 date:   2016-05-06 01
 categories: Java
 tags:  Java 单元测试 TestNG
-author: Dex
+author: i.itest.ren
 ---
 
 * content

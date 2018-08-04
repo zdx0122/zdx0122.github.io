@@ -4,7 +4,7 @@ title:  "【转】Android Monkey 命令行可用的全部选项"
 date:   2016-03-08 
 categories: Android
 tags:  Android ADB
-author: Dex
+author: i.itest.ren
 ---
 
 * content

@@ -4,7 +4,7 @@ title:  "Python入门(1)-Python简介"
 date:   2016-04-22 01
 categories: Python
 tags:  Python
-author: Dex
+author: i.itest.ren
 ---
 
 * content

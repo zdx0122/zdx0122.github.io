@@ -4,7 +4,7 @@ title:  "Android自动化测试工具-MonkeyRunner"
 date:   2016-06-09 01
 categories: Android
 tags:  Android
-author: Dex
+author: i.itest.ren
 ---
 
 * content

@@ -4,7 +4,7 @@ title:  "Hello GitHub Pages!"
 date:   2016-03-05 
 categories: GitHub
 tags:  GitHub
-author: Dex
+author: i.itest.ren
 ---
 
 * content

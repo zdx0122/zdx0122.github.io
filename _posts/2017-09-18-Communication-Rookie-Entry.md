@@ -2,7 +2,7 @@
 layout: post
 title:  "小白入职第一天，面对不认识的同事，该怎么交流？"
 date:   2017-09-18 01
-categories: Dex
+categories: 软能力
 tags:  软能力
 author: i.itest.ren
 ---

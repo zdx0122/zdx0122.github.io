@@ -4,7 +4,7 @@ title:  "MarkDown语法"
 date:   2016-04-14 01
 categories: GitHub
 tags:  GitHub MarkDown
-author: Dex
+author: i.itest.ren
 ---
 
 * content

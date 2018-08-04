@@ -4,7 +4,7 @@ title:  "Python入门(2)-Python变量和数据类型"
 date:   2016-04-22 02
 categories: Python
 tags:  Python
-author: Dex
+author: i.itest.ren
 ---
 
 * content

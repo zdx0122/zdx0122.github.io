@@ -2,7 +2,7 @@
 layout: post
 title:  "SWOT、PDCA、6W2H、SMART、WBS、时间管理、二八原则"
 date:   2017-04-24 01
-categories: Dex
+categories: 软能力
 tags:   软能力
 author: i.itest.ren
 ---
