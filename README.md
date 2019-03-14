@@ -3,7 +3,7 @@
 
 访问网址：[https://i.itest.ren](https://i.itest.ren "https://i.itest.ren")
 
-![个人微信](https://ws1.sinaimg.cn/large/6b6f6a6fly1g12albom2dj20by0bywfx.jpg)
+个人微信：![个人微信](https://ws1.sinaimg.cn/large/6b6f6a6fly1g12albom2dj20by0bywfx.jpg)
 
 主题使用：[HyG](https://github.com/Gaohaoyang/gaohaoyang.github.io/blob/master/README-zh-cn.md)
 
