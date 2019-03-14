@@ -30,7 +30,7 @@ description_footer: 张德玺的博客
 # 两种评论插件，选一个就好了，使用自己的 short_name
 duoshuo_shortname: #itest-ren
 disqus_shortname: #itest
-gitment_owner: zdx0122
+gitalk_owner: zdx0122
 
 
 # statistic analysis 统计代码
