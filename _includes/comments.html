@@ -44,3 +44,40 @@
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 {% endif %}
+
+
+<!-- {% if site.gitalk_owner %}
+<div id="gitalk-container"></div>
+<script>
+    var gitalk = new Gitalk({
+      clientID: '7d72a1a2df6dff0aafa9',
+      clientSecret: 'd8e5aba77c1a45f4c506b92415ea247efb593157',
+      repo: 'zdx0122.github.io',
+      owner: 'zdx0122',
+      admin: ['zdx0122'],
+      id: location.pathname,      // Ensure uniqueness and length less than 50
+      distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+
+    gitalk.render('gitalk-container')
+</script>
+
+{% endif %} -->
+
+{% if site.gitment_owner %}
+    <div id="container"></div>
+    <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+    <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+    <script>
+    var gitment = new Gitment({
+      id: 'location.href', // 可选。默认为 location.href
+      owner: 'zdx0122',
+      repo: 'zdx0122.github.io',
+      oauth: {
+        client_id: '7d72a1a2df6dff0aafa9',
+        client_secret: 'd8e5aba77c1a45f4c506b92415ea247efb593157',
+      },
+    })
+    gitment.render('container')
+    </script>
+{% endif %}
