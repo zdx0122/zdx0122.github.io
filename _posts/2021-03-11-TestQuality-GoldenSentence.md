@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "什么是软件测试？"
-date:   2019-03-13 
-categories: 软件测试教程
-tags:  软件测试教程 软件测试
+title:  "软件质量金句"
+date:   2021-03-11 
+categories: 质量保障
+tags:  质量保障 软件测试
 author: i.itest.ren
 ---
 
