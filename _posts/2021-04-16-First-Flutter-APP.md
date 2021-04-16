@@ -16,10 +16,6 @@ Flutter is Google’s UI toolkit for building beautiful, natively compiled appli
 
 
 
-
-
-Flutter is Google’s UI toolkit for building beautiful, natively compiled applications for mobile, web, and desktop from a single codebase.
-
 ## 移动开发技术介绍
 
 通过移动开发技术介绍，有助于理解Flutter诞生的背景和必要性
