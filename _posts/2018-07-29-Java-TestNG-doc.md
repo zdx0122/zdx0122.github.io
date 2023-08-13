@@ -12,7 +12,7 @@ author: i.itest.ren
 
 TestNG是一个Java语言的测试框架，也是QA最常用的测试框架之一。
 
-![TestNG](http://zdx0122.qiniudn.com/intro.png)
+<!-- ![TestNG](http://zdx0122.qiniudn.com/intro.png) -->
 
 
 
