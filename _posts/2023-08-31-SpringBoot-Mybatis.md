@@ -2,8 +2,8 @@
 layout: post
 title:  "SpringBoot + Mybatis"
 date:   2023-08-31 
-categories: Mybatis
-tags:  Mybatis
+categories: SpringBoot Mybatis Java
+tags:  SpringBoot Mybatis Java
 author: i.itest.ren
 ---
 
