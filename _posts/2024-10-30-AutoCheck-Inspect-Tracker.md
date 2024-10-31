@@ -10,7 +10,7 @@ author: i.itest.ren
 * content
 {:toc}
 
-为方便“及时”感知H5页面服务是否存在稳定性问题，所以搭建一个基础巡检系统，用于检测H5页面是否正常，主动性感知页面异常从而快速处理问题，从而减少对线上服务的影响范围和时长。
+为方便“及时”感知H5页面服务是否存在稳定性问题，所以搭建一个基础巡检系统，用于检测H5页面是否正常，主动性感知页面异常从而快速处理问题，减少对线上服务的影响范围和时长。
 
 基于`Testng + Playwright + SpringBoot + Vue + Ant-Design`，代码已开源在：[https://github.com/TheCoolQATeam/online-inspection-tracker](https://github.com/TheCoolQATeam/online-inspection-tracker)
 
