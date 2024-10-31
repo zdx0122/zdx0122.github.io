@@ -177,4 +177,4 @@ noLoginPage.onRequest((request) -> {
 ## 开源
 项目开源地址：[https://github.com/TheCoolQATeam/online-inspection-tracker](https://github.com/TheCoolQATeam/online-inspection-tracker)
 
-最后，欢迎一起迭代维护，记得star
+最后，欢迎一起迭代维护，记得star~
