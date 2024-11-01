@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "自动化巡检系统"
-date:   2024-10-30
+date:   2024-10-31
 categories: SpringBoot Java TestNg Playwright 自动化巡检
 tags:  SpringBoot Java TestNg  Playwright 自动化巡检
 author: i.itest.ren
