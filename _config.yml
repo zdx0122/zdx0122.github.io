@@ -14,11 +14,11 @@ url: "https://i.itest.ren" # the base hostname & protocol for your site
 permalink: /:year/:month/:day/:title/
 
 # other links
-#twitter_username: gaohaoyang126
+twitter_username: zdx0122
 #facebook_username: gaohaoyang.water
 github_username:  zdx0122
 email: zdx0122@gmail.com
-weibo_username: zdx0122
+#weibo_username: zdx0122
 zhihu_username: #DeXiTest
 #linkedIn_username: gaohaoyang
 dribbble_username:
