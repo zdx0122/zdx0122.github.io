@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "自动化巡检系统"
+title:  "【开源】自动化巡检系统"
 date:   2024-10-31
 categories: SpringBoot Java TestNg Playwright 自动化巡检
 tags:  SpringBoot Java TestNg  Playwright 自动化巡检
@@ -55,6 +55,30 @@ author: i.itest.ren
 - 稳定：基于Testng，使用Testng的断言、参数化、Listener监听、失败重试、数据报告等功能，易于上手
 
 代码已开源在：[https://github.com/TheCoolQATeam/online-inspection-tracker](https://github.com/TheCoolQATeam/online-inspection-tracker)
+
+## Demo试用，一看便知
+减少文章内容篇幅，如何使用就不详细说了，一看便知
+
+demo地址：[https://check.itest.ren/](https://check.itest.ren/)
+
+两种报警信息，一种是主要元素断言失败的报警，一种是视觉回归/图片对比失败的报警
+
+```java
+提醒：线上巡检有报警！
+测试描述：遍历页面可用状态
+测试类和方法：AutoCheckHtml.testHtmlServiceability(int, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.onlines.onlineSaleTest.AutoCheckHtml@3d5a813c]
+测试用例：156；；线上自动化巡检系统；https://check.itest.ren；
+```
+
+```java
+提醒：线上巡检有报警！测试描述
+线上自动化巡检系统
+图片像素对比异常url地址：
+https://check.itest.ren
+图片异常地址
+https://xxxxxx.com/faf28987e446835a576383a78a208911.png
+```
+
 
 ## 主要巡检功能及核心源码
 
